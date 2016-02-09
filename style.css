@@ -1,0 +1,753 @@
+@charset "UTF-8";
+/* CSS Document for nannalder.com */
+
+/*
+Theme Name: Nalder
+Author: Troy Fleischauer
+Author URI: http://www.portfolio.troyfleischauer.com
+Description: Custom theme for nannalder.com
+Version: 160208
+*/
+
+/* DEVO ONLY -- delete when no longer needed */
+
+/*div, header, nav, aside, footer, img {
+	border: 1px solid red;	
+}*/
+
+/*header {
+	border: 1px solid blue;
+	background-color:#2A8195;	blue
+	overflow:hidden;
+	clear:both;	
+}*/
+
+/*ul {
+	background-color: green;	
+}*/
+
+/*li {
+	background-color: red;	
+}*/
+
+/* END DEVO ONLY */
+
+/* RESETS */
+
+/* this zeros out the default margin and padding styles on the body tag and everything nested inside the body tag. */
+body, body * { 
+	margin: 0;
+	padding: 0;		
+}
+
+/* END RESETS */
+
+/* GLOBAL STYLES */
+
+body { /* global font styles go on the body tag */
+	font-family: 'Century Gothic', 'Muli', 'Trebuchet MS', Helvetica, Arial, sans-serif;
+	font-size: 100%; /* 16px */
+	line-height: 1.5; /* 24px */ /* write 1.5 instead of 150%. Browser default is 118%, set to at least 1.3, range of 130 - 160 % is good. */
+	color: #333; /* Dark Grey */
+	background-color:#FFFFFF;
+}
+
+blockquote {
+	font: normal 'Century Gothic', 'Muli', sans-serif; /* 14px /16px = .875em  */
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 50px;
+	padding-left: 15px;
+	border-left: 3px solid #333;
+	
+}
+
+/* makes the quote image line up next to the quote, otherwise the quote is above the p */
+blockquote p {
+  display: inline;
+}
+
+ /* needs unique id if more than one header on the top */
+ /* declared height gets no width, don't use both w and h */
+header {
+	height: 161px; /* height depends on content. always decalre a height on the header! */
+	padding-left:40px;
+}
+
+header a:link {
+	border-bottom:none;
+}
+
+nav {
+	font-size:90%;	
+}
+
+h1, h2, h3, h4 {
+	font-family: Rockwell, 'Kameron', 'Gilda Display', Georgia, serif;	
+	color: #333;
+}
+
+h1 span {
+	display:none;		
+}
+
+h2 {
+	font-size:1.75em; /* 28/ 16px = 175%*/	
+}
+
+h3 {
+	margin-top:15px; /* More space above headlines than below them is the rule. */	
+}
+
+a img { 
+	border: none;	/* Gets rid of blue border that IE puts around linked images */
+}
+
+a:link,
+a:visited {
+	color: #333;
+	text-decoration:none;
+	border-bottom-color: #CCCCCC;
+    border-bottom-style: dotted;
+    border-bottom-width: 2px;
+}
+
+/*  use a border instead of an underline. Underlines are notoriously inflexible. */
+/* a { border-bottom: 1px solid blue; text-decoration: none; }*/    
+
+a:hover,
+a:focus {
+	border-bottom: 1px solid #333;
+	text-decoration: none;
+	border-bottom-color: #333;
+}
+
+ul {
+	list-style-position: outside;
+	padding-left: 1.25em;	
+}
+
+ol {
+	list-style-position: outside;
+	padding-left: 2.75em;	
+}
+
+p, ol, ul {
+	/*margin-bottom: 0.375em;*/ /* 6px / 16px */	
+	margin-bottom: .7em;
+}
+
+li {
+	/*padding-bottom: 0.25em;*/ /* 4px /16px */	
+	margin-bottom:.3em;
+}
+
+section {
+	clear: both;
+	overflow: hidden;
+}
+
+figcaption {
+	text-align:center;
+	background-color:rgba(255,255,255,.70);
+	font-size:125%;
+}
+
+a figcaption {
+	display:none;	
+}
+
+a:hover figcaption {
+	display:block;	
+}
+
+
+/* END GLOBAL STYLES */
+
+/* TABLE STYLES */
+
+table {
+	width: 640px;
+}
+
+table, th, td {
+	/*border: 1px solid red;*/ /* for development only */	
+}
+
+.form-labels {
+	text-align: right;
+	vertical-align:top;	
+}
+
+th, td {
+	padding: 5px;	
+}
+
+fieldset {
+	-moz-box-shadow: 4px 4px 4px #777777;
+	-webkit-box-shadow: 4px 4px 4px #777777;
+	box-shadow: 4px 4px 4px #777777;
+	width: 620px;
+	padding-bottom:20px;
+	margin-bottom:30px;	
+}
+
+legend {
+	font-family: Rockwell, 'Kameron', 'Gilda Display', Georgia, serif;	
+	font-size: 125%; /* 20px /16px */
+	padding:0px 8px 0px 8px;
+}
+
+.first-row {
+	width:220px;		
+}
+
+fieldset#last-table {
+	/*margin-bottom:10px;*/
+}
+
+#contact-thanks {
+	margin-bottom:25px;
+}
+
+/* END TABLE STYLES */
+
+
+/* NAV-SUB STYLES */
+
+#nav-sub {
+	/*background-color:purple;*/ /* DEVO ONLY */
+	width:120px; /* original width:220px */
+	float:left;
+	border:none;
+	text-decoration:none;
+	margin-top:45px;
+	font-style:italic;
+	font-weight:bold;
+}
+
+#nav-sub ul {
+	/*background-color: #E8E8E8;*/
+	padding: 0; /* overrides our global ul padding */
+	list-style-type: none;
+}
+
+#nav-sub li {
+	/*border-top: 1px solid #333;*/	
+	/*font-size: 0.875em;*/ /* 14px / 16px */
+	font-size: 1.5em; /* 24px/ 16px */
+	padding: 0; /* overrides our global li padding */
+	/* paddding-bottom:0.3125em; */
+	/*list-style-type: none;*/ /* here or the ul ? */
+}
+
+#nav-sub li a {
+	color: #333;
+	text-decoration:none;
+	display: block; /* fill the list item */
+	/*padding: 1em 1.25em 1em 0em;*/ /* 16px/ 16px   20px/ 16px = 1.25em */ /* 26px / 16px = 1.625em */
+	padding: 10px 0px 10px 0px;
+	/*background-color:pink; */ /* commenting out the top 2 lines with bg color uncommented illustrates what is going on structurally in this list very well */
+	text-align:right;
+	border-bottom:none;
+}
+
+#nav-sub li a:hover,
+#nav-sub li a:focus { /* use full descendent selectors */
+	/*background-color: #999;	*/
+	/*border-left: solid 1.25em #666;*/ /* 20px / 16 px */
+	color: #333;
+	text-decoration:underline;
+}
+
+#nav-sub ul ul {
+	display: none;	
+}
+
+
+body.about #nav-sub ul#about-sub,
+body.portfolio #nav-sub ul#portfolio-sub {	
+	display: block;
+	font-size:44%; /* ~ 7px / 16px */
+	text-align: right;
+	line-height: 75%;	
+}
+
+body.portfolio-garden #nav-sub ul.portfolio-sub {	
+	
+}
+
+/*.artist-statement .about-link {
+	text-decoration: underline;	
+}*/
+
+/*#artist-statement .about-link {
+	text-decoration: underline;	
+}*/
+
+#home .home-link,
+.about .about-nan-link,
+#artist-statement .about-artist-link,
+#bio .about-nan-link,
+
+#portfolio-home .portfolio-link,
+#portfolio-abstract .abstract-link,
+#portfolio-garden .garden-link,
+#portfolio-land-sea .land-link,
+#portfolio-vestments .vestments-link,
+
+#events .events-link,
+#instruction .instruction-link,
+#contact .contact-link {
+	text-decoration: underline;	
+}
+
+/* END NAV-SUB STYLES */
+
+/* NAV-SERIES STYLES */
+
+/* NAV-MAIN SERIES STYLES */
+#garden-dahlias .garden-link,
+#garden-fish .garden-link,
+#garden-vases .garden-link,
+#garden-mixed .garden-link,
+#garden-passion .garden-link,
+#garden-spring .garden-link,
+#garden-summer .garden-link,
+#garden-sunflowers .garden-link,
+#garden-frida .garden-link {
+	text-decoration: underline;	
+}
+
+/* contains the description and series nav */
+.series-info {
+	padding:5px;	
+}
+
+/* contains the h4 and the p */
+.description-series {
+	width:445px;
+	font-size:55%;
+	clear:both;
+	float:left;
+}
+
+.description-series h4 {
+	font-size:150%;
+}
+
+.nav-series {
+	clear:right;
+	font-size:55%;
+	width:220px; /* original 210px; */
+	float:right;	
+}
+
+.nav-series h4 {
+	font-size:150%;
+		
+}
+
+.nav-series a:link,
+.nav-series a:visited {
+	border-bottom:none;
+}
+
+.nav-series a:hover,
+.nav-series a:focus {
+	text-decoration: underline;
+}
+
+#garden-dahlias .fl-dahlias-link,
+#garden-sunflowers .fl-sunflower-link,
+#garden-fish .fl-fish-link
+#garden-vases .fl-vases-link,
+#garden-mixed .fl-mixed-link,
+#garden-passion .fl-passion-link,
+#garden-spring .fl-spring-link,
+#garden-summer .fl-summer-link,
+#garden-frida .fl-frida-link {
+	font-weight:bold;
+}
+
+/* END NAV-SERIES STYLES */
+
+
+/* LAYOUT STYLES*/
+
+#wrapper { /* sets width and centers */
+	/* 20px gutter + 200px sidebar + 20px gutter + 460px main + 20px gutter + 200px sidebar + 20px gutter = 940px */
+	width: 840px; /* width of wrapper = content + sidebars + gutters */ /* original length is 940px */
+	margin: 20px auto; /*  top and bottom, right and left */
+	background-color:#FFFFFF;	
+}
+
+#middle {
+	overflow:hidden;
+	clear:both;
+	/*padding: 0 20px;*/ /* 0 padding on top and bottom, 20 padding left and right */
+	/*background-color:yellow;*/	
+}
+
+.main {
+	float:right;
+	width:700px;
+	/*background-color:#619AA7;	*/
+}
+
+#content-home {
+	width: 500px; /* As big as possible but still fits the grid and in the viewport */
+	padding-right:200px;
+	
+}
+
+#content-home img { 
+   /*border:10px solid #000;*/
+   border:10px solid #333;
+}
+
+.content {
+	/*background-color:#000000;*/
+	/*width:760px;*/
+	/*width:600px;*/
+	width:460px;
+	float:left;
+	/*padding:10px;*/
+}
+
+#events .content,
+#instruction .content,
+#artist-statement .content,
+#bio .content,
+#site-map .content {
+	width:440px;
+	padding: 0px 10px 0px 10px;
+}
+
+#contact #content,
+#thankyou #content {
+	padding: 0px 10px 0px 10px;
+}
+
+
+.clear {
+	clear:both;	
+}
+
+.to-top {
+	padding-top:20px;
+	padding-bottom:10px;
+	font-size: 0.875em;	/* 14px / 16px */ 
+	font-variant: small-caps;
+}
+
+.secondary {
+	/* background-color:green; */
+	/*clear:both;	*/
+	float: right;
+	margin-top:5px;
+	/*height:300px;*/	/* This was to get rid of the space left as a baseline at the bottom of the inline image */	
+	width: 220px;
+	font-size:75%;
+}
+
+.secondary img {
+	border: 3px solid #333;
+}
+
+/*aside.secondary a:link,
+aside.secondary a:visited {
+	border-bottom:none;
+	text-decoration: none;
+}*/
+
+.lightbox a:link,
+.lightbox a:visited,
+.lightbox a:hover,
+.lightbox a:focus {
+  border-bottom:none;
+  text-decoration: none;	
+}
+
+aside a:link,
+aside a:visited,
+aside a:hover,
+aside a:focus {
+	text-decoration: none;
+	border-bottom:none;	
+}
+
+aside.secondary {}
+
+#site-map a:link,
+#site-map a:visited {
+	border-bottom:none;		
+}
+
+#site-map a:hover,
+#site-map a:focus {
+	text-decoration: underline;	
+}
+
+#site-map ul {
+	list-style-type:disc;	
+}
+
+#site-map ul ul {
+	font-size:85%;	
+}
+
+/* END LAYOUT STYLES */ 
+
+/* GALLERY STYLES */
+
+/* , means 'or' space would mean 'nesting' putting together like below means 'same level' */
+.main.portfolio {
+	/*border: 5px solid #004;*/	
+	border: 5px solid #333;														
+}
+
+.portfolio img { /* Don't control border here, this is for margin */
+	display:block;
+	margin-bottom:20px;	
+	/*height:210px;*/	
+}
+
+.portfolio .main img {
+	/* border: 5px solid #004;	*/	
+	border: 5px solid #333;	 /* puts the border we want around Nan's thumbnails CCC*/												
+}
+	   
+.portfolio .main a:hover img, 
+.portfolio .main a:focus img {
+	/*border: 5px solid rgba(51,51,51,.80);*/
+	border: 5px solid #000000;
+}
+
+#content-one {
+	width:220px;
+	float:left;
+}
+
+#content-two-three {
+	width:460px;
+	float:right;
+}
+
+#column2 {
+	width:220px;
+	float:left;
+}
+
+#column3 {
+	width:220px;
+	float:right;
+}
+
+#nav-back-more {
+	width:220px;
+	/*text-align:right;*/
+	float:right;	
+	height:27px;	
+}
+
+#nav-back-more {
+	visibility: hidden;	
+}
+
+#garden-dahlias #nav-back-more {
+	visibility: visible;	
+}
+
+#nav-back-more a:link,
+#nav-back-more a:visited {
+	border-bottom:none;	
+}
+
+#nav-back-more a:hover,
+#nav-back-more a:focus {
+	text-decoration:underline;
+}
+
+
+.back {
+	float:left;
+}
+
+.next {
+	float:right;
+}
+
+figure {
+	position:relative;	
+}
+
+figcaption {
+	padding:10px;
+	position: absolute;
+	width:190px; 
+	top: 125px;
+	right:5px;
+	text-align:center;
+		
+}
+
+/* END GALLERY STYLES */
+
+
+/* --- FOOTER STYLES --- */
+
+footer {
+/*	background-color:#625B12;*/	/* DEVO ONLY */
+	/*height:80px; *//* if height is removed, to accomodate floated columns of text, replace with overflow:hidden; 
+					this will make the footer expand down to enclose the footer's floated contents */
+	overflow:hidden; 
+	clear:both;
+	text-align:left;
+	/*padding: 20px 240px 20px 240px;*/
+	padding: 15px 0px 20px 0px;
+	color:#808080;
+	font-size: 0.875em; /* 14px / 16px */
+}
+
+footer p {
+	clear: both;	
+}
+
+footer a:link {
+	border-bottom:none;	
+	text-decoration: none;		
+}
+
+/* "BASIC" FOOTER STYLES - NO NAV */
+/* .footer-basic rules for index.php */
+.footer-basic {
+	font-size:.75em; /* 12px /16px */
+	text-align:right;
+}	
+
+.footer-basic a:link,
+.footer-basic a:visited {
+	color:#808080;
+	text-decoration:none;
+}
+
+.footer-basic a:hover,
+.footer-basic a:focus {
+	color:#808080;
+	text-decoration:underline;
+}
+
+/* END "BASIC" FOOTER STYLES */
+
+/* FOOTER NAVIGATION STYLES */
+
+#nav-footer {
+	/*margin: auto; */ /* DEVO only */
+	/*background-color:pink;*/ /* DEVO only */
+	height: 32px;
+	line-height:32px;
+	width: 460px;
+	font-size:1em;	
+	clear:both;
+}
+
+#nav-footer a:link,
+#nav-footer a:visited {
+	/*background-color: red;*/ /* DEVO only */
+	border-bottom:none;	
+	text-decoration: none;
+	display:block;	/* fills list item space */
+	padding: 0 25px 0 0; /* creates spacing between nav items */
+}
+
+#nav-footer a:hover,
+#nav-footer a:focus {
+	text-decoration:underline;
+}
+
+#nav-footer ul {
+	padding: 0;
+	/*padding-left: 1.25em;	*/	
+}
+
+#nav-footer li {
+	float:left;
+	list-style-type: none;	
+	/*margin-right:1px;*/
+}
+
+#nav-sitemap {
+	width:460px;	
+}
+
+#nav-sitemap a:link,
+#nav-sitemap a:visited {
+	/*border-bottom:none;*/	
+	color:#808080; /* light grey */
+}
+
+#nav-sitemap a:hover,
+#nav-sitemap a:focus {
+	color:#808080; /* light grey */
+	text-decoration:none;
+	text-decoration:underline;
+}
+
+#nav-sitemap ul {
+	clear:both;
+	width: 460px;
+	padding: 0;
+	padding-left:0;
+	font-size: 10px; /*.625em;*/ /* 10 /16px */
+	display:block;    
+}
+	
+#nav-sitemap li {	
+	float:left;
+	list-style-type: none;	
+	padding-right: 20px;
+	line-height: 10px;	
+}
+
+#artist-statement #nav-footer,
+#artist-statement #nav-sitemap,
+#bio #nav-footer,
+#bio #nav-sitemap,
+#events #nav-footer,
+#events #nav-sitemap,
+#instruction #nav-footer,
+#instruction #nav-sitemap,
+#contact #nav-footer,
+#contact #nav-sitemap,
+#thankyou #nav-footer,
+#thankyou #nav-sitemap,
+#site-map #nav-footer,
+#site-map #nav-sitemap {
+	padding:0px 0px 0px 10px;		
+}
+
+/* END FOOTER NAVIGATION STYLES */
+
+/* Century Gothic copyright is so wide that it gets clipped on the left side */
+#copyright {
+	/*padding-left:1px;*/
+	/*word-spacing:6px;*/	
+}
+
+/* --- END FOOTER STYLES --- */
+
+
+/* VALIDATION LINK STYLES */
+
+.validation a:link,
+.validation a:visited,
+.validation a:hover,
+.validation a:focus {
+	text-decoration:none;
+	border-bottom:none;
+	display:inline;
+	text-align:center;
+}
+
+/* END VALIDATION LINK STYLES */
