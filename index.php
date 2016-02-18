@@ -1,55 +1,52 @@
-<?php include('includes/header.php'); ?>
-<body id="home">
-<?php include('includes/nav.php'); ?>
+<?php get_header(); ?>
 
-<div><span id="nav-back-more"><a class="back" href="garden-dahlias-2.php">&lt; Back</a> <a class="next" href="portfolio-garden.php"> More &gt;</a></span> </div>  
+<div><span id="nav-back-more"><a class="back" href="garden-dahlias-2.php">&lt; Back</a> <a class="next" href="portfolio-garden.php"> More &gt;</a></span> </div> 
 
-  <div class="main">
-      <!--<p>Main Div Text</p>-->
+<!-- Start Middle - includes sidebar -->
+<div class="middle">
+<!-- Start Content - does not include sidebar-->
+<div class="content">
+
+  <h2><?php // if (is_category()) { single_cat_title(); } else { single_post_title(); } ?></h2>
+  <p><?php // get_seo(); ?></p>
+  <?php // while (have_posts()) : the_post(); ?>
+  <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); // start the loop ?>
+    <article class="blog-excerpt">
+    
+      <h3 id="post-<?php the_ID(); ?>">
+      	<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanant Link to <?php the_title(); ?>">
+	  	<?php the_title(); // put anchor tag around the title of the current post ?>&nbsp;&raquo;</a>
+      </h3>
       
+      <small class="by-line">Posted on <?php the_time('F jS, Y') ?> by <?php the_author(); ?> in <?php the_category(', ') ?></small> <!-- the S in jS adds suffix such as 'th', as in Feb 6th -->
       
+      <a href="<?php the_permalink(); // links to page or posting ?>" rel="bookmark" title="Permanent Link to <?php the_title(); // put anchor tag around the URL for the permalink ?>">
+	  	<?php echo get_the_post_thumbnail( $post->ID, 'thumbnail'); ?>
+        <?php // the_post_thumbnail( 'thumbnail' ); ?>
+      </a>
+      
+      <!-- the excerpt automatically is put in <p></p>, strip_tags strip away <p></p> -->
+      <p><?php echo strip_tags(get_the_excerpt()); ?> &nbsp;<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>">Read More&nbsp;&raquo;</a></p>
+      
+    </article>
+ 
+  <?php endwhile; else : ?>
+	<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+  <?php endif; // end the loop ?>
   
-      <div id="content-home"><!--<p>Content Text</p> -->
-      <!--<img src="images/African-Daisies-3-760x1000.jpg" id="African-Daisies-3" alt="African-Daisies-3" width="760" height="1000" />-->
-      <!-- <img src="images/Cherry-Tree-2005-580x773px.jpg" id="African-Daisies-3" alt="Cherry-Tree-2005" width="580" height="773" />-->
-      <!--<img src="images/Cherry-Tree-2005-440x486px.jpg" id="African-Daisies-3" alt="Cherry-Tree-2005" width="440" height="486" />-->
-      <!--<img src="images/Cherry-Tree-2005-435x580px.jpg" id="African-Daisies-3" alt="Cherry-Tree-2005" width="435" height="580" /></div>-->
-       <img src="images/Sunflower-Symphony-3-480x687px.jpg" id="Sunflower-Symphony-3" alt="Sunflower-Symphony-3" width="480" height="687" />
-      
-     <!-- <aside id="secondary-sidebar">
-      	<p>Secondary Sidebar Text</p>
-          <ul>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li> 
-              <li>Fusce nisi elit, eleifend quis purus eget, tincidunt tempor massa.</li> 
-              <li>Vestibulum cursus viverra aliquet.</li>
-              <li>Sed vestibulum suscipit nibh, sit amet pharetra nisl lacinia ac.</li> 
-              <li>Nullam ac quam porttitor, volutpat arcu sollicitudin, porta libero.</li>
-          </ul>    
-       </aside>-->
-       
-       <footer class="footer-basic">&copy; 2014 Nan Nalder  &nbsp;  Design Troy Fleischauer  &nbsp;  <a href="site-map.php">Site Map</a></footer>
-       
-       </div> <!-- end content-home -->
+  <ul class="post-navigation">
+  	<li class="post-navigation-previous"><?php previous_posts_link( '&laquo;&nbsp;Newer' ) ?></li>
+    <li class="post-navigation-next"><?php next_post_link( 'Older&nbsp;&raquo;'); ?></li>
+  </ul>
   
-  </div> <!-- end main -->    
+  <small>index.php</small>
 
+</div>
+<!-- End Content -->
 
-</div> <!-- end middle -->
+<?php get_sidebar(); ?>
 
-<!-- begin validation buttons -->
-<p class="validation">
- <a href="http://validator.w3.org/check?uri=referer">
-  <img src="http://www.w3.org/html/logo/badge/html5-badge-h-solo.png" 
-  width="31" height="32" alt="valid HTML5" />
- </a>
- <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3">
-  <img src="http://jigsaw.w3.org/css-validator/images/vcss" 
-   alt="Valid CSS3" height="31" width="88" />
- </a>
-</p>
-<!-- end validation buttons -->
+</div>
+<!-- End Middle -->
 
-</div> <!-- close wrapper -->
-
-</body>
-</html>
+<?php get_footer() ?>

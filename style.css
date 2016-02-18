@@ -6,21 +6,18 @@ Theme Name: Nalder
 Author: Troy Fleischauer
 Author URI: http://www.portfolio.troyfleischauer.com
 Description: Custom theme for nannalder.com
-Version: 160208
+Version: 160218
 */
 
 /* DEVO ONLY -- delete when no longer needed */
-
-/*div, header, nav, aside, footer, img {
+div, header, nav, aside, footer, img {
 	border: 1px solid red;	
-}*/
+}
 
-/*header {
-	border: 1px solid blue;
-	background-color:#2A8195;	blue
-	overflow:hidden;
-	clear:both;	
-}*/
+header {
+	border: 1px solid beige;
+	background-color: #2A8195; /* blue */
+}
 
 /*ul {
 	background-color: green;	
@@ -29,21 +26,17 @@ Version: 160208
 /*li {
 	background-color: red;	
 }*/
-
 /* END DEVO ONLY */
 
 /* RESETS */
-
 /* this zeros out the default margin and padding styles on the body tag and everything nested inside the body tag. */
 body, body * { 
 	margin: 0;
 	padding: 0;		
 }
-
 /* END RESETS */
 
 /* GLOBAL STYLES */
-
 body { /* global font styles go on the body tag */
 	font-family: 'Century Gothic', 'Muli', 'Trebuchet MS', Helvetica, Arial, sans-serif;
 	font-size: 100%; /* 16px */
@@ -53,13 +46,12 @@ body { /* global font styles go on the body tag */
 }
 
 blockquote {
-	font: normal 'Century Gothic', 'Muli', sans-serif; /* 14px /16px = .875em  */
+	font: normal 'Century Gothic', 'Muli', sans-serif; /* 14px / 16px = .875em  */
 	margin-top: 10px;
 	margin-bottom: 10px;
 	margin-left: 50px;
 	padding-left: 15px;
 	border-left: 3px solid #333;
-	
 }
 
 /* makes the quote image line up next to the quote, otherwise the quote is above the p */
@@ -70,16 +62,12 @@ blockquote p {
  /* needs unique id if more than one header on the top */
  /* declared height gets no width, don't use both w and h */
 header {
-	height: 161px; /* height depends on content. always decalre a height on the header! */
-	padding-left:40px;
+	height: 161px; /* height depends on content. always declare a height on the header! */
+	padding-left: 40px;
 }
 
 header a:link {
-	border-bottom:none;
-}
-
-nav {
-	font-size:90%;	
+	border-bottom: none;
 }
 
 h1, h2, h3, h4 {
@@ -92,7 +80,7 @@ h1 span {
 }
 
 h2 {
-	font-size:1.75em; /* 28/ 16px = 175%*/	
+	font-size:1.75em; /* 28/16px = 175%*/	
 }
 
 h3 {
@@ -107,13 +95,11 @@ a:link,
 a:visited {
 	color: #333;
 	text-decoration:none;
-	border-bottom-color: #CCCCCC;
-    border-bottom-style: dotted;
+    /*  Use a border instead of an underline. Underlines are notoriously inflexible. */
     border-bottom-width: 2px;
-}
-
-/*  use a border instead of an underline. Underlines are notoriously inflexible. */
-/* a { border-bottom: 1px solid blue; text-decoration: none; }*/    
+	border-bottom-style: dotted;
+	border-bottom-color: #CCCCCC;
+}   
 
 a:hover,
 a:focus {
@@ -147,6 +133,13 @@ section {
 	overflow: hidden;
 }
 
+.content article.blog-excerpt {
+	overflow: hidden;
+	margin-bottom: 15px;	
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 10px;
+}
+
 figcaption {
 	text-align:center;
 	background-color:rgba(255,255,255,.70);
@@ -161,62 +154,33 @@ a:hover figcaption {
 	display:block;	
 }
 
+small {
+	display: block;	
+}
 
+.by-line {
+	margin-bottom: 15px;	
+}
+
+.sidebar div.widget {
+	margin-bottom: 20px; 
+}
+
+.clear {
+	clear:both;	
+}
+
+.to-top {
+	padding-top: 20px;
+	padding-bottom: 10px;
+	font-size: 0.875em;	/* 14px / 16px */ 
+	font-variant: small-caps;
+}
 /* END GLOBAL STYLES */
 
-/* TABLE STYLES */
-
-table {
-	width: 640px;
-}
-
-table, th, td {
-	/*border: 1px solid red;*/ /* for development only */	
-}
-
-.form-labels {
-	text-align: right;
-	vertical-align:top;	
-}
-
-th, td {
-	padding: 5px;	
-}
-
-fieldset {
-	-moz-box-shadow: 4px 4px 4px #777777;
-	-webkit-box-shadow: 4px 4px 4px #777777;
-	box-shadow: 4px 4px 4px #777777;
-	width: 620px;
-	padding-bottom:20px;
-	margin-bottom:30px;	
-}
-
-legend {
-	font-family: Rockwell, 'Kameron', 'Gilda Display', Georgia, serif;	
-	font-size: 125%; /* 20px /16px */
-	padding:0px 8px 0px 8px;
-}
-
-.first-row {
-	width:220px;		
-}
-
-fieldset#last-table {
-	/*margin-bottom:10px;*/
-}
-
-#contact-thanks {
-	margin-bottom:25px;
-}
-
-/* END TABLE STYLES */
-
-
-/* NAV-SUB STYLES */
-
-#nav-sub {
-	/*background-color:purple;*/ /* DEVO ONLY */
+/* NAV-MAIN STYLES */
+#nav-main {
+	background-color: palegoldenrod; /* DEVO ONLY */
 	width:120px; /* original width:220px */
 	float:left;
 	border:none;
@@ -224,15 +188,16 @@ fieldset#last-table {
 	margin-top:45px;
 	font-style:italic;
 	font-weight:bold;
+	font-size: .9em;
 }
 
-#nav-sub ul {
+#nav-main ul {
 	/*background-color: #E8E8E8;*/
 	padding: 0; /* overrides our global ul padding */
 	list-style-type: none;
 }
 
-#nav-sub li {
+#nav-main li {
 	/*border-top: 1px solid #333;*/	
 	/*font-size: 0.875em;*/ /* 14px / 16px */
 	font-size: 1.5em; /* 24px/ 16px */
@@ -241,7 +206,7 @@ fieldset#last-table {
 	/*list-style-type: none;*/ /* here or the ul ? */
 }
 
-#nav-sub li a {
+#nav-main li a {
 	color: #333;
 	text-decoration:none;
 	display: block; /* fill the list item */
@@ -252,28 +217,63 @@ fieldset#last-table {
 	border-bottom:none;
 }
 
-#nav-sub li a:hover,
-#nav-sub li a:focus { /* use full descendent selectors */
+#nav-main li a:hover,
+#nav-main li a:focus { /* use full descendent selectors */
 	/*background-color: #999;	*/
 	/*border-left: solid 1.25em #666;*/ /* 20px / 16 px */
 	color: #333;
 	text-decoration:underline;
 }
 
-#nav-sub ul ul {
-	display: none;	
+#nav-main ul li.current-menu-item a,
+li.page_item.current_page_item a {
+	color: #333;
+	text-decoration:underline;
 }
 
+/* if on archive template for blog category, make the URL show you are here state */
+/*body .category-blog .menu-item-26 a {
+	color: #333;
+	text-decoration:underline;	
+}*/
 
-body.about #nav-sub ul#about-sub,
-body.portfolio #nav-sub ul#portfolio-sub {	
-	display: block;
+#nav-footer ul li.current-menu-item a,
+#nav-footer ul li.current-page-ancestor a {
+	color: #333;
+	text-decoration:underline;
+}
+
+#nav-main ul ul {
+	/*display: none;	*/
+}
+
+#nav-main ul li ul.sub-menu {
+	/*display: block;*/	
+	font-size: .5em;
+}
+
+/* Show Current Selected Menu Item */
+.sub-menu { 
+	display: none; 
+}
+
+.current_page_item .sub-menu, 
+.current_page_parent .sub-menu { 
+	display: block; 
+}
+/* End Show Current Selected Menu Item */
+/* END NAV-MAIN STYLES */
+
+/* GATEWAY NAVIGATION STYLES */
+body.about #nav-main ul#about-sub,
+body.portfolio #nav-main ul#portfolio-sub {	
+	/*display: block;*/
 	font-size:44%; /* ~ 7px / 16px */
 	text-align: right;
 	line-height: 75%;	
 }
 
-body.portfolio-garden #nav-sub ul.portfolio-sub {	
+body.portfolio-garden #nav-main ul.portfolio-sub {	
 	
 }
 
@@ -301,12 +301,9 @@ body.portfolio-garden #nav-sub ul.portfolio-sub {
 #contact .contact-link {
 	text-decoration: underline;	
 }
-
-/* END NAV-SUB STYLES */
+/* END GATEWAY NAVIGATION STYLES */
 
 /* NAV-SERIES STYLES */
-
-/* NAV-MAIN SERIES STYLES */
 #garden-dahlias .garden-link,
 #garden-fish .garden-link,
 #garden-vases .garden-link,
@@ -345,7 +342,6 @@ body.portfolio-garden #nav-sub ul.portfolio-sub {
 
 .nav-series h4 {
 	font-size:150%;
-		
 }
 
 .nav-series a:link,
@@ -369,30 +365,46 @@ body.portfolio-garden #nav-sub ul.portfolio-sub {
 #garden-frida .fl-frida-link {
 	font-weight:bold;
 }
-
 /* END NAV-SERIES STYLES */
 
-
-/* LAYOUT STYLES*/
-
+/* LAYOUT STYLES */
 #wrapper { /* sets width and centers */
 	/* 20px gutter + 200px sidebar + 20px gutter + 460px main + 20px gutter + 200px sidebar + 20px gutter = 940px */
 	width: 840px; /* width of wrapper = content + sidebars + gutters */ /* original length is 940px */
 	margin: 20px auto; /*  top and bottom, right and left */
-	background-color:#FFFFFF;	
+	overflow: hidden;
+	background-color: cyan;	
 }
 
-#middle {
-	overflow:hidden;
-	clear:both;
-	/*padding: 0 20px;*/ /* 0 padding on top and bottom, 20 padding left and right */
-	/*background-color:yellow;*/	
+/* middle - includes sidebar */
+.middle {
+	float: right;
+	width: 700px;
+	background: peru;
+	/*overflow:hidden;*/
+	/*clear:both;*/
+	/*padding: 0 20px;*/ /* 0 padding on top and bottom, 20 padding left and right */	
 }
 
-.main {
-	float:right;
-	width:700px;
-	/*background-color:#619AA7;	*/
+/* content - does not includes sidebar */
+.content {
+	/*width:760px;*/
+	/*width:600px;*/
+	width:460px;
+	float:left;
+	/*padding:10px;*/
+	
+	/* WP */
+	background: orchid;
+	padding: 0px 10px 0px 10px;
+	/*overflow: hidden;
+	display: block;*/
+}
+
+.sidebar {
+	width: 200px;
+	background-color: thistle;
+	float: right;
 }
 
 #content-home {
@@ -404,15 +416,6 @@ body.portfolio-garden #nav-sub ul.portfolio-sub {
 #content-home img { 
    /*border:10px solid #000;*/
    border:10px solid #333;
-}
-
-.content {
-	/*background-color:#000000;*/
-	/*width:760px;*/
-	/*width:600px;*/
-	width:460px;
-	float:left;
-	/*padding:10px;*/
 }
 
 #events .content,
@@ -427,18 +430,6 @@ body.portfolio-garden #nav-sub ul.portfolio-sub {
 #contact #content,
 #thankyou #content {
 	padding: 0px 10px 0px 10px;
-}
-
-
-.clear {
-	clear:both;	
-}
-
-.to-top {
-	padding-top:20px;
-	padding-bottom:10px;
-	font-size: 0.875em;	/* 14px / 16px */ 
-	font-variant: small-caps;
 }
 
 .secondary {
@@ -496,13 +487,40 @@ aside.secondary {}
 #site-map ul ul {
 	font-size:85%;	
 }
-
 /* END LAYOUT STYLES */ 
 
-/* GALLERY STYLES */
+/* FRONT PAGE FLEXSLIDER STYLES */
+/* the containing div that the images are in */
+.flexslider {
+	border: none !important;
+	background: pink !important;
+	width: 500px;	
+}
 
+.flexslider .slides img {
+  width: 480px !important;
+  display: block;
+  height: 687px !important;
+  border: 10px solid #333;
+}
+
+/* Removes post field paragraph tags that could be used in add_flexslider in functions.php */
+/*.flexslider p {
+	display: none;	
+}*/
+
+.flex-direction-nav a {
+  border-bottom: none !important;
+}
+
+.flex-direction-nav a:before  { 
+ font-size: 34px !important; 
+}
+/* END FRONT PAGE FLEXSLIDER STYLES */	
+
+/* GALLERY STYLES */
 /* , means 'or' space would mean 'nesting' putting together like below means 'same level' */
-.main.portfolio {
+.middle.portfolio {
 	/*border: 5px solid #004;*/	
 	border: 5px solid #333;														
 }
@@ -513,13 +531,13 @@ aside.secondary {}
 	/*height:210px;*/	
 }
 
-.portfolio .main img {
+.portfolio .middle img {
 	/* border: 5px solid #004;	*/	
 	border: 5px solid #333;	 /* puts the border we want around Nan's thumbnails CCC*/												
 }
 	   
-.portfolio .main a:hover img, 
-.portfolio .main a:focus img {
+.portfolio .middle a:hover img, 
+.portfolio .middle a:focus img {
 	/*border: 5px solid rgba(51,51,51,.80);*/
 	border: 5px solid #000000;
 }
@@ -582,7 +600,8 @@ figure {
 	position:relative;	
 }
 
-figcaption {
+/* also in global styles */
+figcaption { 
 	padding:10px;
 	position: absolute;
 	width:190px; 
@@ -591,12 +610,10 @@ figcaption {
 	text-align:center;
 		
 }
-
 /* END GALLERY STYLES */
 
 
-/* --- FOOTER STYLES --- */
-
+/* FOOTER STYLES */
 footer {
 /*	background-color:#625B12;*/	/* DEVO ONLY */
 	/*height:80px; *//* if height is removed, to accomodate floated columns of text, replace with overflow:hidden; 
@@ -608,6 +625,10 @@ footer {
 	padding: 15px 0px 20px 0px;
 	color:#808080;
 	font-size: 0.875em; /* 14px / 16px */
+	
+	width: 700px;
+	float: right;
+	background: gold;
 }
 
 footer p {
@@ -637,24 +658,21 @@ footer a:link {
 	color:#808080;
 	text-decoration:underline;
 }
-
 /* END "BASIC" FOOTER STYLES */
 
 /* FOOTER NAVIGATION STYLES */
-
 #nav-footer {
-	/*margin: auto; */ /* DEVO only */
-	/*background-color:pink;*/ /* DEVO only */
+	background-color: rebeccapurple; /* DEVO only */
 	height: 32px;
 	line-height:32px;
-	width: 460px;
+	/*width: 460px;*/
 	font-size:1em;	
 	clear:both;
 }
 
 #nav-footer a:link,
 #nav-footer a:visited {
-	/*background-color: red;*/ /* DEVO only */
+	background-color: orangered; /* DEVO only */
 	border-bottom:none;	
 	text-decoration: none;
 	display:block;	/* fills list item space */
@@ -671,14 +689,17 @@ footer a:link {
 	/*padding-left: 1.25em;	*/	
 }
 
-#nav-footer li {
+nav#nav-footer li {
 	float:left;
 	list-style-type: none;	
 	/*margin-right:1px;*/
 }
 
 #nav-sitemap {
-	width:460px;	
+	/*width:460px;*/
+	width: 100%;
+	overflow: hidden;
+	background: paleturquoise;	
 }
 
 #nav-sitemap a:link,
@@ -696,7 +717,7 @@ footer a:link {
 
 #nav-sitemap ul {
 	clear:both;
-	width: 460px;
+	/*width: 460px;*/
 	padding: 0;
 	padding-left:0;
 	font-size: 10px; /*.625em;*/ /* 10 /16px */
@@ -726,7 +747,6 @@ footer a:link {
 #site-map #nav-sitemap {
 	padding:0px 0px 0px 10px;		
 }
-
 /* END FOOTER NAVIGATION STYLES */
 
 /* Century Gothic copyright is so wide that it gets clipped on the left side */
@@ -734,12 +754,9 @@ footer a:link {
 	/*padding-left:1px;*/
 	/*word-spacing:6px;*/	
 }
-
-/* --- END FOOTER STYLES --- */
-
+/* END FOOTER STYLES */
 
 /* VALIDATION LINK STYLES */
-
 .validation a:link,
 .validation a:visited,
 .validation a:hover,
@@ -749,5 +766,201 @@ footer a:link {
 	display:inline;
 	text-align:center;
 }
-
 /* END VALIDATION LINK STYLES */
+
+/* TABLE STYLES */
+table {
+	width: 640px;
+}
+
+table, th, td {
+	/*border: 1px solid red;*/ /* for development only */	
+}
+
+.form-labels {
+	text-align: right;
+	vertical-align:top;	
+}
+
+th, td {
+	padding: 5px;	
+}
+
+fieldset {
+	-moz-box-shadow: 4px 4px 4px #777777;
+	-webkit-box-shadow: 4px 4px 4px #777777;
+	box-shadow: 4px 4px 4px #777777;
+	width: 620px;
+	padding-bottom:20px;
+	margin-bottom:30px;	
+}
+
+legend {
+	font-family: Rockwell, 'Kameron', 'Gilda Display', Georgia, serif;	
+	font-size: 125%; /* 20px /16px */
+	padding:0px 8px 0px 8px;
+}
+
+.first-row {
+	width:220px;		
+}
+
+fieldset#last-table {
+	/*margin-bottom:10px;*/
+}
+
+#contact-thanks {
+	margin-bottom:25px;
+}
+/* END TABLE STYLES */
+
+/* WORDPRESS GENERATED CLASSES */
+/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption a {
+  border-bottom: none;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+
+/* Prevents the great collapse */
+.content article.post-excerpt {
+	overflow: hidden;
+	margin-bottom: 20px;	
+}
+
+.content.img {
+	/* will switch to box model, the borders and padding will be inside the image */
+	/* good for responsive to keep the borders and padding the same */
+	/* helps with problems for the width of the image */
+	/* this is good to have the same padding and border on the image without 
+	   having to calculate percentages when using responsive sizes. */
+	/* could just call it 100px w/o having to subtract the amount of padding and border from the content. */
+	box-sizing: border-box; 
+	/*border: 1px solid #000;
+	padding: 4px;	*/
+}
+
+.content img.featured {
+	 margin-bottom: 10px;	
+}
+
+/* Post Thumbnails */
+.content img.wp-post-image {}
+
+/* Floats thumbnail image to the left and puts proper margins on thumbnail image. */
+.content img.attachment-thumbnail {
+	float: left;
+	margin: 4px 20px 0 0;	
+}
+
+.content img.attachment-medium {}
+
+.content img.attachment-large {}
+
+.content img.attachment-full {}
+/* End Post Thumbnails */
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+/* END WORDPRESS GENERATED CLASSES */
