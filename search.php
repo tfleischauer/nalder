@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<div><span id="nav-back-more"><a class="back" href="garden-dahlias-2.php">&lt; Back</a> <a class="next" href="portfolio-garden.php"> More &gt;</a></span> </div> 
-
 <!-- Start Middle - includes sidebar -->
 <div class="middle">
 <!-- Start Content - does not include sidebar-->
@@ -24,10 +22,10 @@
     
     <?php endwhile; ?>
 	
-    <ul class="post-navigation">
-  		<li class="post-navigation-previous"><?php previous_posts_link( '&laquo;&nbsp;Newer' ) ?></li>
-    	<li class="post-navigation-next"><?php next_post_link( 'Older&nbsp;&raquo;'); ?></li>
-  	</ul>
+    <nav class="prev-next-posts">
+     <p class="alignleft"><?php next_posts_link('&laquo; Older Posts') ?></p>
+     <p class="alignright"><?php previous_posts_link('Newer Posts &raquo;') ?></p>
+  	</nav>
     
     <section class="search-again">
     	<p>Still not satisified... Try another search?</p>
@@ -52,3 +50,4 @@
 <!-- End Middle -->
 
 <?php get_footer() ?>
+

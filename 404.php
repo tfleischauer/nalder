@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<div><span id="nav-back-more"><a class="back" href="garden-dahlias-2.php">&lt; Back</a> <a class="next" href="portfolio-garden.php"> More &gt;</a></span> </div> 
-
 <!-- Start Middle - includes sidebar -->
 <div class="middle">
 <!-- Start Content - does not include sidebar-->
@@ -24,3 +22,4 @@
 <!-- End Middle -->
 
 <?php get_footer() ?>
+

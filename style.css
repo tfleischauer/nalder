@@ -6,29 +6,79 @@ Theme Name: Nalder
 Author: Troy Fleischauer
 Author URI: http://www.portfolio.troyfleischauer.com
 Description: Custom theme for nannalder.com
-Version: 160218
+Version: 160225
 */
 
 /* DEVO ONLY -- delete when no longer needed */
 div, header, nav, aside, footer, img {
-	border: 1px solid red;	
+	outline: 1px solid red;	
 }
 
 header {
-	border: 1px solid beige;
-	background-color: #2A8195; /* blue */
+	background-color: darkcyan;
 }
 
-/*ul {
-	background-color: green;	
-}*/
+ul {
+	background-color: darkolivegreen;	
+}
 
-/*li {
-	background-color: red;	
-}*/
+li {
+	background-color: crimson;	
+}
+
+#nav-main {
+	background-color: palegoldenrod;
+}
+
+#nav-main ul {
+	background-color: darkseagreen;
+}
+
+/* bg color uncommented illustrates what is going on structurally in this list very well */
+#nav-main li a {
+	background-color:pink;  
+}
+
+#nav-main li a:hover,
+#nav-main li a:focus {
+	background-color: #999;	
+}
+
+section {
+	background-color: hotpink;
+}
+
+.middle {
+	background-color: deeppink;
+}
+
+.content {
+	background-color: orchid;
+}
+
+.sidebar {
+	background-color: thistle;
+}
+
+footer {
+	background-color: gold;
+}
+
+#nav-footer {
+	background-color: rebeccapurple;
+}
+
+#nav-footer a:link,
+#nav-footer a:visited {
+	background-color: orangered;
+}
+
+table, th, td {
+	outline: 1px solid red;
+}
 /* END DEVO ONLY */
 
-/* RESETS */
+/* START RESETS */
 /* this zeros out the default margin and padding styles on the body tag and everything nested inside the body tag. */
 body, body * { 
 	margin: 0;
@@ -42,25 +92,11 @@ body { /* global font styles go on the body tag */
 	font-size: 100%; /* 16px */
 	line-height: 1.5; /* 24px */ /* write 1.5 instead of 150%. Browser default is 118%, set to at least 1.3, range of 130 - 160 % is good. */
 	color: #333; /* Dark Grey */
-	background-color:#FFFFFF;
+	background-color: #FFFFFF;
 }
 
-blockquote {
-	font: normal 'Century Gothic', 'Muli', sans-serif; /* 14px / 16px = .875em  */
-	margin-top: 10px;
-	margin-bottom: 10px;
-	margin-left: 50px;
-	padding-left: 15px;
-	border-left: 3px solid #333;
-}
-
-/* makes the quote image line up next to the quote, otherwise the quote is above the p */
-blockquote p {
-  display: inline;
-}
-
- /* needs unique id if more than one header on the top */
- /* declared height gets no width, don't use both w and h */
+/* needs unique id if more than one header on the top */
+/* declared height gets no width, don't use both w and h */
 header {
 	height: 161px; /* height depends on content. always declare a height on the header! */
 	padding-left: 40px;
@@ -75,16 +111,12 @@ h1, h2, h3, h4 {
 	color: #333;
 }
 
-h1 span {
-	display:none;		
-}
-
 h2 {
-	font-size:1.75em; /* 28/16px = 175%*/	
+	font-size: 1.75em; /* 28 / 16px = 175% */	
 }
 
 h3 {
-	margin-top:15px; /* More space above headlines than below them is the rule. */	
+	margin-top: 15px; /* More space above headlines than below them is the rule. */	
 }
 
 a img { 
@@ -119,51 +151,29 @@ ol {
 }
 
 p, ol, ul {
-	/*margin-bottom: 0.375em;*/ /* 6px / 16px */	
 	margin-bottom: .7em;
 }
 
 li {
-	/*padding-bottom: 0.25em;*/ /* 4px /16px */	
-	margin-bottom:.3em;
+	margin-bottom: .3em;
 }
 
-section {
-	clear: both;
-	overflow: hidden;
+blockquote {
+	font: normal 'Century Gothic', 'Muli', sans-serif; /* 14px / 16px = .875em  */
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 50px;
+	padding-left: 15px;
+	border-left: 3px solid #333;
 }
 
-.content article.blog-excerpt {
-	overflow: hidden;
-	margin-bottom: 15px;	
-	border-bottom: 1px solid #ddd;
-	padding-bottom: 10px;
-}
-
-figcaption {
-	text-align:center;
-	background-color:rgba(255,255,255,.70);
-	font-size:125%;
-}
-
-a figcaption {
-	display:none;	
-}
-
-a:hover figcaption {
-	display:block;	
+/* makes the quote image line up next to the quote, otherwise the quote is above the p */
+blockquote p {
+  	display: inline;
 }
 
 small {
 	display: block;	
-}
-
-.by-line {
-	margin-bottom: 15px;	
-}
-
-.sidebar div.widget {
-	margin-bottom: 20px; 
 }
 
 .clear {
@@ -176,62 +186,130 @@ small {
 	font-size: 0.875em;	/* 14px / 16px */ 
 	font-variant: small-caps;
 }
+
+/* START CAPTIONS */
+figcaption {
+	text-align: center;
+	background-color: rgba(255,255,255,.70);
+	font-size: 1.25em;
+	padding: 10px;
+	position: absolute;
+	width: 190px; 
+	top: 125px;
+	right: 5px;
+	text-align: center;
+}
+
+a figcaption {
+	display: none;	
+}
+
+a:hover figcaption {
+	display:block;	
+}
+
+/* START DISPLAY WP GALLERY CAPTIONS ON TOP OF IMAGE */
+figcaption {
+	display: none;
+}
+
+.gallery-item:hover figcaption {
+	display: block;
+}
+/* END DISPLAY WP GALLERY CAPTIONS ON TOP OF IMAGE */
+
+/* fun with caption styles */
+/*.wp-caption { position:relative }
+p.wp-caption-text { display:none;}
+.wp-caption:hover p.wp-caption-text {display:block;position:absolute;bottom:-1px;left:-5px;background: #f4f4f4;width:100%; }*/
+/* END CAPTIONS */
 /* END GLOBAL STYLES */
+
+/* LAYOUT STYLES */
+#wrapper { /* sets width and centers */
+	width: 840px; /* width of wrapper = 120px #nav-main + 20px gutter + 700px .middle */
+	margin: 20px auto; /*  top and bottom, right and left */
+	overflow: hidden;
+	background-color: cyan;	
+}
+
+/* middle - includes sidebar area */
+.middle {
+	float: right;
+	width: 700px;
+	margin-top: 5px;
+}
+
+/* content - does not includes sidebar area */
+.content {
+	width: 460px;
+	float: left;
+	padding: 0px 10px 0px 10px;
+}
+
+.sidebar {
+	width: 200px;
+	float: right;
+}
+
+section {
+	clear: both;
+	overflow: hidden;
+}
+/* END LAYOUT STYLES */ 
 
 /* NAV-MAIN STYLES */
 #nav-main {
-	background-color: palegoldenrod; /* DEVO ONLY */
-	width:120px; /* original width:220px */
-	float:left;
-	border:none;
-	text-decoration:none;
-	margin-top:45px;
-	font-style:italic;
-	font-weight:bold;
+	width: 120px;
+	float: left;
+	border: none;
+	text-decoration: none;
+	margin-top: 45px;
+	font-style: italic;
+	font-weight: bold;
 	font-size: .9em;
 }
 
 #nav-main ul {
-	/*background-color: #E8E8E8;*/
 	padding: 0; /* overrides our global ul padding */
 	list-style-type: none;
 }
 
 #nav-main li {
-	/*border-top: 1px solid #333;*/	
-	/*font-size: 0.875em;*/ /* 14px / 16px */
-	font-size: 1.5em; /* 24px/ 16px */
+	font-size: 1.5em; /* 24px / 16px */
 	padding: 0; /* overrides our global li padding */
-	/* paddding-bottom:0.3125em; */
-	/*list-style-type: none;*/ /* here or the ul ? */
 }
 
 #nav-main li a {
 	color: #333;
 	text-decoration:none;
 	display: block; /* fill the list item */
-	/*padding: 1em 1.25em 1em 0em;*/ /* 16px/ 16px   20px/ 16px = 1.25em */ /* 26px / 16px = 1.625em */
+	/*padding: 1em 1.25em 1em 0em;*/ /* 16px / 16px = 1em,  20px / 16px = 1.25em */
 	padding: 10px 0px 10px 0px;
-	/*background-color:pink; */ /* commenting out the top 2 lines with bg color uncommented illustrates what is going on structurally in this list very well */
-	text-align:right;
-	border-bottom:none;
+	text-align: right;
+	border-bottom: none;
 }
 
 #nav-main li a:hover,
 #nav-main li a:focus { /* use full descendent selectors */
-	/*background-color: #999;	*/
-	/*border-left: solid 1.25em #666;*/ /* 20px / 16 px */
 	color: #333;
-	text-decoration:underline;
+	text-decoration: underline;
 }
 
+#nav-main ul li ul.sub-menu {	
+	font-size: .44em;
+	line-height: .75;
+}
+
+/* START 'YOU ARE HERE' STATE INDICATORS (CURRENT SELECTED MENU ITEM) */
 #nav-main ul li.current-menu-item a,
 li.page_item.current_page_item a {
 	color: #333;
-	text-decoration:underline;
+	text-decoration: underline;
 }
 
-/* if on archive template for blog category, make the URL show you are here state */
+/* if on archive template for blog category, 
+make the URL show you are here state */
 /*body .category-blog .menu-item-26 a {
 	color: #333;
 	text-decoration:underline;	
@@ -243,16 +321,6 @@ li.page_item.current_page_item a {
 	text-decoration:underline;
 }
 
-#nav-main ul ul {
-	/*display: none;	*/
-}
-
-#nav-main ul li ul.sub-menu {
-	/*display: block;*/	
-	font-size: .5em;
-}
-
-/* Show Current Selected Menu Item */
 .sub-menu { 
 	display: none; 
 }
@@ -261,7 +329,7 @@ li.page_item.current_page_item a {
 .current_page_parent .sub-menu { 
 	display: block; 
 }
-/* End Show Current Selected Menu Item */
+/* END 'YOU ARE HERE' STATE INDICATORS (CURRENT SELECTED MENU ITEM) */
 /* END NAV-MAIN STYLES */
 
 /* GATEWAY NAVIGATION STYLES */
@@ -299,11 +367,110 @@ body.portfolio-garden #nav-main ul.portfolio-sub {
 #events .events-link,
 #instruction .instruction-link,
 #contact .contact-link {
-	text-decoration: underline;	
+	/*text-decoration: underline;*/	
 }
 /* END GATEWAY NAVIGATION STYLES */
 
-/* NAV-SERIES STYLES */
+/*---------- START GALLERY STYLES ----------*/
+/* PORTFOLIO GATEWAY PAGE STYLES */
+.page .middle a img {
+	border: 5px solid #333;	
+	/*margin: 0 0 10px 0;*/
+}
+
+.page .middle a:hover img {
+	border: 5px solid #000;	
+}
+
+p.wp-caption-text {
+	text-align: center;
+	background-color: rgba(255,255,255,.70);
+	font-size: 125%;
+}
+
+.gallery div.wp-caption p.wp-caption-text,
+.gallery div.wp-caption p.wp-caption-text {
+	display: none;	
+}
+
+.gallery div#wp-caption a:hover > p.wp-caption-text,
+.gallery div#wp-caption a:focus > p.wp-caption-text {
+	display: block;	
+}
+
+#content-one p,
+#content-two-three p,
+#column2 p,
+#column3 p {
+	margin: 0;
+	padding: 0;	
+	line-height: 0;
+}
+
+#content-one a,
+#content-two-three a,
+#column2 a,
+#column3 a {
+	border-bottom: none;
+	overflow: none;	
+}
+/* END PORTFOLIO GATEWAY PAGE STYLES */
+
+/* PORTFOLIO DESTINATION - WP GALLERY STYLING */
+/* TUTORIAL: http://logoscreative.co/styling-html5-wordpress-gallery/ */
+.gallery {
+  margin: auto;
+}
+
+.gallery .gallery-item {
+  float: left; /* Change to 'right' if RTL is enabled */
+  margin-top: 10px;
+  text-align: center;
+}
+
+.gallery img {
+ /* border: 2px solid #cfcfcf;*/
+}
+
+.gallery .gallery-caption {
+  margin-left: 0;
+}
+
+.gallery figure {
+	margin-right: 20px;	
+	margin-bottom: 15px;
+}
+
+.gallery figure:nth-child(3n+0) {
+	margin-right: 0px;	
+}
+
+/*div.wp-caption p.wp-caption-text,
+div.wp-caption p.wp-caption-text,*/
+/*#gallery-1 a figcaption {
+	display: none;	
+}*/
+
+/*div#wp-caption a:hover > p.wp-caption-text,
+div#wp-caption a:focus > p.wp-caption-text,*/
+/*#gallery-1 a:hover figcaption {
+	display: block;	
+}*/
+
+.gallery a {
+	border-bottom: none;
+	overflow: none;	
+}
+
+a#prevLink,
+a#nextLink,
+a#bottomNavClose,
+a#playPause {
+	border-bottom: none;	
+}
+/* END PORTFOLIO DESTINATION - WP GALLERY STYLING */
+
+/* START NAV-SERIES STYLES - STATIC TEMPLATES */
 #garden-dahlias .garden-link,
 #garden-fish .garden-link,
 #garden-vases .garden-link,
@@ -324,18 +491,19 @@ body.portfolio-garden #nav-main ul.portfolio-sub {
 /* contains the h4 and the p */
 .description-series {
 	width:445px;
-	font-size:55%;
+	font-size: .55em;
 	clear:both;
 	float:left;
+	display: block;
 }
 
 .description-series h4 {
-	font-size:150%;
+	font-size:1.5em;
 }
 
 .nav-series {
 	clear:right;
-	font-size:55%;
+	font-size: .55em;
 	width:220px; /* original 210px; */
 	float:right;	
 }
@@ -365,158 +533,7 @@ body.portfolio-garden #nav-main ul.portfolio-sub {
 #garden-frida .fl-frida-link {
 	font-weight:bold;
 }
-/* END NAV-SERIES STYLES */
-
-/* LAYOUT STYLES */
-#wrapper { /* sets width and centers */
-	/* 20px gutter + 200px sidebar + 20px gutter + 460px main + 20px gutter + 200px sidebar + 20px gutter = 940px */
-	width: 840px; /* width of wrapper = content + sidebars + gutters */ /* original length is 940px */
-	margin: 20px auto; /*  top and bottom, right and left */
-	overflow: hidden;
-	background-color: cyan;	
-}
-
-/* middle - includes sidebar */
-.middle {
-	float: right;
-	width: 700px;
-	background: peru;
-	/*overflow:hidden;*/
-	/*clear:both;*/
-	/*padding: 0 20px;*/ /* 0 padding on top and bottom, 20 padding left and right */	
-}
-
-/* content - does not includes sidebar */
-.content {
-	/*width:760px;*/
-	/*width:600px;*/
-	width:460px;
-	float:left;
-	/*padding:10px;*/
-	
-	/* WP */
-	background: orchid;
-	padding: 0px 10px 0px 10px;
-	/*overflow: hidden;
-	display: block;*/
-}
-
-.sidebar {
-	width: 200px;
-	background-color: thistle;
-	float: right;
-}
-
-#content-home {
-	width: 500px; /* As big as possible but still fits the grid and in the viewport */
-	padding-right:200px;
-	
-}
-
-#content-home img { 
-   /*border:10px solid #000;*/
-   border:10px solid #333;
-}
-
-#events .content,
-#instruction .content,
-#artist-statement .content,
-#bio .content,
-#site-map .content {
-	width:440px;
-	padding: 0px 10px 0px 10px;
-}
-
-#contact #content,
-#thankyou #content {
-	padding: 0px 10px 0px 10px;
-}
-
-.secondary {
-	/* background-color:green; */
-	/*clear:both;	*/
-	float: right;
-	margin-top:5px;
-	/*height:300px;*/	/* This was to get rid of the space left as a baseline at the bottom of the inline image */	
-	width: 220px;
-	font-size:75%;
-}
-
-.secondary img {
-	border: 3px solid #333;
-}
-
-/*aside.secondary a:link,
-aside.secondary a:visited {
-	border-bottom:none;
-	text-decoration: none;
-}*/
-
-.lightbox a:link,
-.lightbox a:visited,
-.lightbox a:hover,
-.lightbox a:focus {
-  border-bottom:none;
-  text-decoration: none;	
-}
-
-aside a:link,
-aside a:visited,
-aside a:hover,
-aside a:focus {
-	text-decoration: none;
-	border-bottom:none;	
-}
-
-aside.secondary {}
-
-#site-map a:link,
-#site-map a:visited {
-	border-bottom:none;		
-}
-
-#site-map a:hover,
-#site-map a:focus {
-	text-decoration: underline;	
-}
-
-#site-map ul {
-	list-style-type:disc;	
-}
-
-#site-map ul ul {
-	font-size:85%;	
-}
-/* END LAYOUT STYLES */ 
-
-/* FRONT PAGE FLEXSLIDER STYLES */
-/* the containing div that the images are in */
-.flexslider {
-	border: none !important;
-	background: pink !important;
-	width: 500px;	
-}
-
-.flexslider .slides img {
-  width: 480px !important;
-  display: block;
-  height: 687px !important;
-  border: 10px solid #333;
-}
-
-/* Removes post field paragraph tags that could be used in add_flexslider in functions.php */
-/*.flexslider p {
-	display: none;	
-}*/
-
-.flex-direction-nav a {
-  border-bottom: none !important;
-}
-
-.flex-direction-nav a:before  { 
- font-size: 34px !important; 
-}
-/* END FRONT PAGE FLEXSLIDER STYLES */	
+/* END NAV-SERIES STYLES - STATIC TEMPLATES */
 
 /* GALLERY STYLES */
 /* , means 'or' space would mean 'nesting' putting together like below means 'same level' */
@@ -562,31 +579,31 @@ aside.secondary {}
 	float:right;
 }
 
+.title-width {
+	width: 460px;	
+	display: inline-block;
+	float: left;
+	outline: 1px solid green;
+}
+
 #nav-back-more {
 	width:220px;
-	/*text-align:right;*/
-	float:right;	
+	display: inline-block;
+	float: right;
+	outline: 1px solid black;
+	padding-top: 15px;
 	height:27px;	
-}
-
-#nav-back-more {
-	visibility: hidden;	
-}
-
-#garden-dahlias #nav-back-more {
-	visibility: visible;	
 }
 
 #nav-back-more a:link,
 #nav-back-more a:visited {
-	border-bottom:none;	
+	border-bottom: none;	
 }
 
 #nav-back-more a:hover,
 #nav-back-more a:focus {
-	text-decoration:underline;
+	text-decoration: underline;
 }
-
 
 .back {
 	float:left;
@@ -596,39 +613,228 @@ aside.secondary {}
 	float:right;
 }
 
-figure {
-	position:relative;	
+.page-template-page-portfolio-back-more #nav-back-more,
+.page-template-page-portfolio-back #nav-back-more,
+.page-template-page-portfolio-more #nav-back-more {
+	/*visibility: visible;*/	
 }
 
-/* also in global styles */
-figcaption { 
-	padding:10px;
-	position: absolute;
-	width:190px; 
-	top: 125px;
-	right:5px;
-	text-align:center;
-		
+/*#nav-back-more {
+	visibility: hidden;	
+}*/
+
+/*.page-template-page-portfolio #nav-back-more {
+	visibility: visible;	
+}*/
+
+/*.page-template-page-portfolio-back-more #nav-back-more,
+.page-template-page-portfolio-back #nav-back-more,
+.page-template-page-portfolio-more #nav-back-more {
+	width:220px;
+	text-align:right;
+	float:right;	
+	height:27px;
+	
+	display: inline-block;
+	float: right;
+	outline: 1px solid black;
+	padding-top: 15px;	
+}*/
+
+
+
+figure {
+	position: relative;	
 }
 /* END GALLERY STYLES */
 
+/* Portfolio Series Description */
+.page-template-page-portfolio p,
+.page-template-page-portfolio-back-more p,
+.page-template-page-portfolio-back p,
+.page-template-page-portfolio-more p {
+		font-size: .55em;	
+		max-width: 445px;
+}
+/*---------- END GALLERY STYLES ----------*/
+
+/* START FRONT PAGE STYLES */
+/* FRONT PAGE FLEXSLIDER STYLES */
+.flexslider { /* the containing div that the images are in */
+	border: none !important;
+	background: pink !important;
+	width: 500px;
+	margin-bottom: 10px !important;	
+}
+
+.flexslider .slides img {
+	width: 480px !important;
+	display: block;
+	height: 687px !important;
+	border: 10px solid #333;
+}
+
+/* Removes post field paragraph tags that could be used in add_flexslider in functions.php */
+/*.flexslider p {
+	display: none;	
+}*/
+
+.flex-direction-nav a {
+	border-bottom: none !important;
+}
+
+.flex-direction-nav a:before  { 
+   font-size: 34px !important; 
+}
+
+/* controls the positioning of the indicator dots */
+.flex-control-nav {
+	bottom: 15px !important;
+	z-index: 2 !important;	
+}
+
+/* controls the color of the inactive indicator dots */
+.flex-control-paging li a {
+	background: #FFF !important;
+	opacity: 0.5 !important;	
+}
+
+/* controls the color of the active indicator dot */
+.flex-control-paging li a.flex-active {
+	background: #333 !important;
+	opacity: 0.75 !important;	
+}
+/* END FRONT PAGE FLEXSLIDER STYLES */
+
+/* START "BASIC" FOOTER STYLES - NO NAV (front-page.php) */
+footer.footer-basic {
+	width: 500px;
+	float: none;
+	padding: 0;
+	font-size: .75em; /* 12px /16px */
+	text-align: right;
+}
+/* END "BASIC" FOOTER STYLES - NO NAV (front-page.php) */
+/* END FRONT PAGE STYLES */	
+
+/* START INDEX.PHP STYLES (BLOG PAGE) */
+.content article.blog-excerpt {
+	overflow: hidden;
+	margin-bottom: 15px;	
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 10px;
+}
+
+.by-line {
+	margin-bottom: 15px;	
+}
+
+.sidebar div.widget {
+	margin-bottom: 20px; 
+}
+
+.widget blockquote {
+	margin-left: 3px;	
+}
+
+nav.prev-next-posts {
+	overflow: hidden;
+}
+
+ul.post-navigation {
+	color: black;	
+}
+/* END INDEX.PHP STYLES (BLOG PAGE) */
+
+/* START SINGLE.PHP */
+/* comments on single.php */
+div#respond {
+	clear: both;	
+}
+/* END SINGLE.PHP */
+
+/* START SITE MAP STYLES */
+#site-map a:link,
+#site-map a:visited {
+	border-bottom:none;		
+}
+
+#site-map a:hover,
+#site-map a:focus {
+	text-decoration: underline;	
+}
+
+#site-map ul {
+	list-style-type:disc;	
+}
+
+#site-map ul ul {
+	font-size:85%;	
+}
+/* END SITE MAP STYLES */
+
+/* START ABOUT PAGE STYLES */
+.about-content p,
+.about-content a,
+.about-content h1,
+.about-content h2,
+.about-content h3,
+.about-content h4,
+.about-content h5,
+.about-content h6,
+.about-content blockquote,
+.about-content ul,
+.about-content ol {
+	max-width: 460px;
+}
+
+.about-content h3 {
+	margin-top: 15px;	
+}
+
+.about-content .wp-caption p.wp-caption-text {
+	padding: 0;	
+	margin: 0;
+	width: inherit;
+	/*width: 100%;*/
+	text-align: center;
+}
+
+.about-content .wp-caption {
+	padding: 0;
+	margin: 0;	
+	border: none;
+	clear: both;
+} 
+
+.about-content .wp-caption p.wp-caption-text {
+	padding: 0;	
+	margin: 0;
+	width: inherit;
+	/*width: 100%;*/
+	text-align: center;
+}
+
+.about-content .wp-caption {
+	padding: 0;
+	margin: 0;	
+	border: none;
+	clear: both;
+}
+/* END ABOUT PAGE STYLES */
 
 /* FOOTER STYLES */
 footer {
-/*	background-color:#625B12;*/	/* DEVO ONLY */
-	/*height:80px; *//* if height is removed, to accomodate floated columns of text, replace with overflow:hidden; 
-					this will make the footer expand down to enclose the footer's floated contents */
-	overflow:hidden; 
-	clear:both;
-	text-align:left;
-	/*padding: 20px 240px 20px 240px;*/
-	padding: 15px 0px 20px 0px;
-	color:#808080;
-	font-size: 0.875em; /* 14px / 16px */
-	
+	clear: both;
 	width: 700px;
 	float: right;
-	background: gold;
+	padding: 15px 0px 20px 0px;
+	text-align: left;
+	font-size: 0.875em; /* 14px / 16px */
+	color: #808080; /* light grey */
+	/*height: 80px; *//* if height is removed, to accomodate floated columns of text, replace with overflow:hidden; 
+					this will make the footer expand down to enclose the footer's floated contents */
+	overflow: hidden;
 }
 
 footer p {
@@ -636,86 +842,59 @@ footer p {
 }
 
 footer a:link {
-	border-bottom:none;	
+	border-bottom: none;	
 	text-decoration: none;		
 }
 
-/* "BASIC" FOOTER STYLES - NO NAV */
-/* .footer-basic rules for index.php */
-.footer-basic {
-	font-size:.75em; /* 12px /16px */
-	text-align:right;
-}	
-
-.footer-basic a:link,
-.footer-basic a:visited {
-	color:#808080;
-	text-decoration:none;
-}
-
-.footer-basic a:hover,
-.footer-basic a:focus {
-	color:#808080;
-	text-decoration:underline;
-}
-/* END "BASIC" FOOTER STYLES */
-
-/* FOOTER NAVIGATION STYLES */
+/* START FOOTER NAVIGATION STYLES */
 #nav-footer {
-	background-color: rebeccapurple; /* DEVO only */
 	height: 32px;
-	line-height:32px;
-	/*width: 460px;*/
-	font-size:1em;	
-	clear:both;
+	line-height: 32px;
+	font-size: 1em;	
+	clear: both;
 }
 
 #nav-footer a:link,
 #nav-footer a:visited {
-	background-color: orangered; /* DEVO only */
-	border-bottom:none;	
+	border-bottom: none;	
 	text-decoration: none;
-	display:block;	/* fills list item space */
+	display: block;	/* fills list item space */
 	padding: 0 25px 0 0; /* creates spacing between nav items */
 }
 
 #nav-footer a:hover,
 #nav-footer a:focus {
-	text-decoration:underline;
+	text-decoration: underline;
 }
 
 #nav-footer ul {
 	padding: 0;
-	/*padding-left: 1.25em;	*/	
 }
 
 nav#nav-footer li {
 	float:left;
 	list-style-type: none;	
-	/*margin-right:1px;*/
 }
 
-#nav-sitemap {
-	/*width:460px;*/
+.nav-footer-utility {
 	width: 100%;
 	overflow: hidden;
 	background: paleturquoise;	
 }
 
-#nav-sitemap a:link,
-#nav-sitemap a:visited {
-	/*border-bottom:none;*/	
-	color:#808080; /* light grey */
+.nav-footer-utility a:link,
+.nav-footer-utility a:visited {
+	color: #808080; 
 }
 
-#nav-sitemap a:hover,
-#nav-sitemap a:focus {
+.nav-footer-utility a:hover,
+.nav-footer-utility a:focus {
 	color:#808080; /* light grey */
 	text-decoration:none;
 	text-decoration:underline;
 }
 
-#nav-sitemap ul {
+.nav-footer-utility ul {
 	clear:both;
 	/*width: 460px;*/
 	padding: 0;
@@ -724,32 +903,15 @@ nav#nav-footer li {
 	display:block;    
 }
 	
-#nav-sitemap li {	
+.nav-footer-utility li {	
 	float:left;
 	list-style-type: none;	
 	padding-right: 20px;
 	line-height: 10px;	
 }
-
-#artist-statement #nav-footer,
-#artist-statement #nav-sitemap,
-#bio #nav-footer,
-#bio #nav-sitemap,
-#events #nav-footer,
-#events #nav-sitemap,
-#instruction #nav-footer,
-#instruction #nav-sitemap,
-#contact #nav-footer,
-#contact #nav-sitemap,
-#thankyou #nav-footer,
-#thankyou #nav-sitemap,
-#site-map #nav-footer,
-#site-map #nav-sitemap {
-	padding:0px 0px 0px 10px;		
-}
 /* END FOOTER NAVIGATION STYLES */
 
-/* Century Gothic copyright is so wide that it gets clipped on the left side */
+/* Century Gothic copyright symbol is so wide that it gets clipped on the left side. */
 #copyright {
 	/*padding-left:1px;*/
 	/*word-spacing:6px;*/	
@@ -768,13 +930,10 @@ nav#nav-footer li {
 }
 /* END VALIDATION LINK STYLES */
 
+/* START STATIC CONTACT FORM STYLES */
 /* TABLE STYLES */
 table {
 	width: 640px;
-}
-
-table, th, td {
-	/*border: 1px solid red;*/ /* for development only */	
 }
 
 .form-labels {
@@ -813,8 +972,44 @@ fieldset#last-table {
 	margin-bottom:25px;
 }
 /* END TABLE STYLES */
+/* END STATIC CONTACT FORM STYLES */
 
-/* WORDPRESS GENERATED CLASSES */
+/* START CONTACT FORM 7 STYLES */
+.wpcf7 p {
+  margin-bottom: .6em;
+  font-size: 1.1em;
+}
+
+.wpcf7 textarea {
+  margin-bottom: 0.6em;
+  width: calc(100% * (400/560));
+}
+
+.wpcf7 input[type="text"],
+input[type="email"] {
+  width: calc(100% * (400/560));
+  height: 34px;
+}
+
+.wpcf7-submit {
+  width: 25%;
+  height: 32px;
+  font-size: .875em;
+  margin-top: .6em;
+}
+
+.wpcf7-list-item-label {
+  padding-right: 10px;
+}
+/* END CONTACT FORM 7 STYLES */
+
+/* START INPUT FORM */
+input#s {
+	/*height: 34px;*/	
+}
+/* END INPUT FORM */
+
+/* START WORDPRESS GENERATED CLASSES (with a few custom alterations and additions) */
 /* =WordPress Core
 -------------------------------------------------------------- */
 .alignnone {
@@ -860,9 +1055,9 @@ a img.aligncenter {
 .wp-caption {
     background: #fff;
     border: 1px solid #f0f0f0;
-    max-width: 96%; /* Image does not overflow the content area */
-    padding: 5px 3px 10px;
-    text-align: center;
+    max-width: 96%; /* image does not overflow the content area */
+    padding: 5px 3px 10px; 
+    text-align: center; /* also aligns the image to the center of div.wp.caption */
 }
 
 .wp-caption a {
@@ -888,6 +1083,12 @@ a img.aligncenter {
     max-width: 98.5%;
     padding: 0;
     width: auto;
+	border: 3px solid #333;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;	
 }
 
 .wp-caption p.wp-caption-text {
@@ -904,12 +1105,12 @@ a img.aligncenter {
 }
 
 .content.img {
-	/* will switch to box model, the borders and padding will be inside the image */
-	/* good for responsive to keep the borders and padding the same */
+	/* will switch to box model for images, the borders and padding will be inside the image's width */
+	/* good for responsive to keep the borders and padding the same as the stated width */
 	/* helps with problems for the width of the image */
 	/* this is good to have the same padding and border on the image without 
 	   having to calculate percentages when using responsive sizes. */
-	/* could just call it 100px w/o having to subtract the amount of padding and border from the content. */
+	/* ex: could just call it 100px w/o having to subtract the amount of padding and border from the content. */
 	box-sizing: border-box; 
 	/*border: 1px solid #000;
 	padding: 4px;	*/
@@ -920,7 +1121,13 @@ a img.aligncenter {
 }
 
 /* Post Thumbnails */
-.content img.wp-post-image {}
+.content img.wp-post-image {
+	border: 5px solid #333;
+}
+
+.single img.wp-post-image {
+	border: 3px solid #333;
+}
 
 /* Floats thumbnail image to the left and puts proper margins on thumbnail image. */
 .content img.attachment-thumbnail {
@@ -963,4 +1170,133 @@ a img.aligncenter {
 	width: auto;
 	z-index: 100000; /* Above WP toolbar. */
 }
-/* END WORDPRESS GENERATED CLASSES */
+/* END WORDPRESS GENERATED CLASSES (with a few custom alterations and additions) */
+
+/* START FOO GALLERY STYLES */
+.foogallery-container {
+	clear: both;	
+}
+
+.foogallery-default.border-style-square-black a, 
+.foogallery-default.border-style-square-black.foogallery-link-none img {
+	border: none !important;
+}
+
+.foogallery-container a:link, 
+.foogallery-container a:visited {
+  color: #333;
+  text-decoration: none;
+  border-bottom-width: 0; 
+  border-bottom-style: none; 
+  border-bottom-color: none;
+}
+
+.foogallery-default.spacing-width-20 a:nth-child(3n+0) {
+	margin-right: 0;
+	padding-right: 0;	
+}
+ 
+/* .foogallery-default.spacing-width-20.foogallery-link-none img */
+.foogallery-gallery-289 a:hover img, 
+.foogallery-gallery-289 a:focus img {
+	/*border: 5px solid rgba(51,51,51,.80);*/
+	border: 5px solid #000000 !important;
+}
+
+.foogallery-gallery-289 a:link {
+	border-bottom: none;	
+}
+
+a.fbx-next.fbx-btn-transition.fbx-btn-shadow {
+  /*background-color: rgba(0, 0, 0, 0.8) !important;*/ 
+}
+
+.fbx-light .fbx-inner {
+  /*background-color: rgba(0, 0, 0, 0.8) !important;*/
+}
+
+/* foogallery-container foogallery-default foogallery-link-image foogallery-lightbox-unknown 
+spacing-width-10 hover-effect-zoom hover-effect-caption  alignment-left hover-caption-simple */
+
+/*.foogallery-default,*/
+.foogallery-caption {
+	/*display: none;*/
+   /*background-color: rgba(255,255,255,0.8) !important; 
+   color: #000 !important;*/
+ /* position: absolute;
+  z-index: 100;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+  width: 100%;
+  overflow: hidden;*/
+}
+
+.tp-title {
+ padding: 10px 35px 0px 0px !important;
+ width: 100%;
+ top: auto;
+}
+
+.tp-info, .tp-title {
+ top: auto;
+ width: 100%;
+ text-align: left !important;
+ bottom: 0;
+}
+
+.fbx-rounded .fbx-inner {
+  border: 8px solid transparent;
+   border-radius: 0 !important; 
+}
+
+a.fbx-close-overlays,
+a#close_overlays {
+	border-bottom: none;
+}
+
+.fbx-light .fbx-inner {border-color: #F5F5DC;}
+.fbx-light .fbx-inner, .fbx-light .fbx-loader, .fbx-light .fbx-close, .fbx-light .fbx-prev, .fbx-light .fbx-next, .fbx-light .fbx-play, .fbx-light .fbx-pause, .fbx-light .fbx-fullscreen-toggle, .fbx-light .fbx-social-toggle, .fbx-rounded.fbx-light.fbx-inset-buttons .fbx-prev:before, .fbx-rounded.fbx-light.fbx-inset-buttons .fbx-next:before {
+ background-color: #F5F5DC;
+}
+
+/* Controls the black semi-transparent
+    background for modern browsers */
+.fbx-modal {background: rgba(0,0,0,.7) none !important;}
+/* Controls the glow around the image.
+   This is the default style */
+.fbx-inner {
+    -moz-box-shadow:0 0 12px #000;
+    -moz-box-shadow:0 0 12px rgba(0,0,0,.8);
+    -webkit-box-shadow:0 0 12px #000;
+     -webkit-box-shadow:0 0 12px rgba(0,0,0,.8);
+     box-shadow:0 0 12px #000;
+     box-shadow:0 0 12px rgba(0,0,0,.8)}
+/* Change the appearance for navigation on larger screens */
+ .fbx-prev {}
+ .fbx-next {}
+ .fbx-close {}
+ .fbx-fullscreen-toggle {}
+/* Controls the look of the FooBox Captions */
+ .fbx-caption {}
+ .fbx-caption-title {}
+ .fbx-caption-desc {}
+ .fbx-title {}
+
+/* Control the look of the FooBox affiliate link */
+ .fbx-credit {}
+
+/* Controls the image count */
+.fbx-count {}
+
+.fbx-phone.fbx-modal {}
+
+.fbx-phone.fbx-caption {}
+
+.fbx-tablet.fbx-modal {}
+
+.fbx-tablet.fbx-caption {}
+/* END FOO GALLERY STYLES */
+

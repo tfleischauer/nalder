@@ -6,7 +6,7 @@
 <?php wp_nav_menu( array('theme_location' => 'footer-menu', 'container' => 'nav', 'container_id' => 'nav-footer')); ?>
 <!--</nav>-->
 
-<nav id="nav-sitemap">
+<nav class="nav-footer-utility">
     <ul>
       <li>&copy; <?php print ("" . date ('Y') . ""); ?> Nan Nalder</li>
       <li>  | </li>
@@ -38,3 +38,4 @@
 
 </body>
 </html>
+

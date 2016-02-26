@@ -30,24 +30,25 @@ Description: Custom theme for nannalder.com
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/flexslider.css" type="text/css" media="all" />
 <!-- End Styles -->
 
-<!-- Start Scripts -->
+<!-- Start External Scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/scripts/jquery.flexslider.js"></script>
-<!-- End Scripts -->
+<!-- End External Scripts -->
 
-<!-- Start Flex Slider -->
+<!-- Start Scripts -->
+<!-- Start Flex Slider for front-page.php -->
 <script>
 	$(window).load(function(){
 		$('.flexslider').flexslider({
 			animation: "fade",
 			slideshow: true,
 			smoothHeight: true,
-			slideshowSpeed: 7000,    //Integer: Set the speed of the slideshow cycling, in milliseconds
-			animationSpeed: 500      //Integer: Set the speed of animations, in milliseconds
+			slideshowSpeed: 7000,  // Integer: Set the speed of the slideshow cycling, in milliseconds
+			animationSpeed: 500    // Integer: Set the speed of animations, in milliseconds
 		});
 	});
 </script>
-<!-- End Flex Slider -->
+<!-- End Flex Slider for front-page.php -->
 
 <!-- Start Toggle Menu -->
 <script>
@@ -57,11 +58,55 @@ Description: Custom theme for nannalder.com
 		});
 	});*/
 	
-	
 	/*$(".current_page_parent").click().slideToggle('slow');*/
 	
 </script>
 <!-- End Toggle Menu -->
+
+<!-- Start Image Rollover -->
+<!--The <script> tags are HTML, not JavaScript.-->
+<script>
+	$(document).ready(function() {
+	$("img.rollover").hover( 
+	function() { this.src = this.src.replace("_off", "_on"); 
+	}, 
+	function() { this.src = this.src.replace("_on", "_off"); 
+	});
+	}); 
+	
+	<!--  now this is a javaScript comment! 
+  
+    -->
+</script>
+<!-- End Image Rollover -->
+ 
+<!-- Start Make Columns with WordPress Gallery --> 
+<script>
+  // Cache the Gallery element
+  var gallery = jQuery('.gallery');
+  if ( gallery.length > 0 ) {
+	// Find the WordPress class that tells us how many columns to use
+	var columns = jQuery.grep(gallery.attr('class').split(' '), function(v, i) {
+		return v.indexOf('gallery-columns') === 0;
+	}).join();
+	// Get the number out of the class and calculate the width
+	gallery.find('.gallery-item').width( 100/parseInt(columns.replace('gallery-columns-', '')) + '%' );
+  }
+</script>
+<!-- End Make Columns with WordPress Gallery --> 
+
+<!-- Start Figcaption with Hyperlink Using the Parent's HREF Attribute -->
+<script>
+jQuery(document).ready(function($){
+
+$('figcaption').wrap('<a />');
+$('figcaption').parent().attr('href', function() {return $(this).parent().find('div > a').attr('href') } );
+
+});
+</script>
+<!-- End Figcaption with Hyperlink Using the Parent's HREF Attribute -->
+
+<!-- End Scripts -->
 
 <!-- Start WP Head -->
 <?php wp_head(); ?>
@@ -95,3 +140,4 @@ Description: Custom theme for nannalder.com
 <!-- End Main Menu -->
 
 <small>header.php</small>
+

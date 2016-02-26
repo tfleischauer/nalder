@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<div><span id="nav-back-more"><a class="back" href="garden-dahlias-2.php">&lt; Back</a> <a class="next" href="portfolio-garden.php"> More &gt;</a></span> </div> 
-
 <!-- Start Middle - includes sidebar -->
 <div class="middle">
 <!-- Start Content - does not include sidebar-->
@@ -10,16 +8,24 @@
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); // start the loop ?>
     <article id="post-<?php the_ID(); ?>" class="post">
       <?php the_title('<h2>', '</h2>'); ?>
-      <small class="by-line">Posted on <?php the_time('F jS, Y') ?> by <?php the_author(); ?> in <?php the_category(', ') ?></small>
-      <?php the_post_thumbnail( 'large'); // get the featured image ?>
+      
+      <small class="by-line">Posted on <?php the_time('F jS, Y') ?> by <?php the_author(); ?> in <?php the_category(', ') ?>. <br/> <?php the_tags( 'Tags: ', ', ', '.' ); ?></small>
+      
+      <div class="wp-caption aligncenter">
+		<?php the_post_thumbnail('large'); // get the featured image ?>
+        
+        <?php if ( $caption = get_post( get_post_thumbnail_id() )->post_excerpt ) ?>
+          <p class="wp-caption-text"><?php echo $caption; ?></p>
+      </div>
+  
       <?php the_content(''); // get the page or posting written content ?>
       
-      <ul class="post-navigation">
-        <li class="post-navigation-previous"><?php previous_posts_link( '&laquo;&nbsp;Newer' ) ?></li>
-        <li class="post-navigation-next"><?php next_post_link( 'Older&nbsp;&raquo;'); ?></li>
-      </ul>
+      <nav class="prev-next-posts">
+       <p class="alignleft"><?php next_posts_link('&laquo; Older Posts') ?></p>
+       <p class="alignright"><?php previous_posts_link('Newer Posts &raquo;') ?></p>
+      </nav>
     </article>
-      <?php comments_template(''); ?>
+    <?php comments_template(''); ?>
  
   <?php endwhile; else : ?>
 	<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
@@ -36,3 +42,4 @@
 <!-- End Middle -->
 
 <?php get_footer() ?>
+

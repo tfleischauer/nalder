@@ -32,6 +32,11 @@ add_theme_support( 'post-thumbnails' );
 add_post_type_support( 'page', 'excerpt' );
 // End Enable Excerpts for Pages
 
+// Declare support for HTML5 Galleries and Captions
+// add_theme_support( 'html5', array( 'gallery', 'caption' ) );
+add_theme_support( 'html5', array( 'gallery') );
+// End Declare support for HTML5 Galleries and Captions
+
 // Get My Title Tag by Mike Sinkula
 function get_my_title_tag() {
 	
@@ -98,3 +103,4 @@ function add_flexslider() {
 // End Add Flexslider by Mike Sinkula
 
 ?>
+

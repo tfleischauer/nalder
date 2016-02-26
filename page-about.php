@@ -1,12 +1,15 @@
+<?php /* Template Name: Page-About */ ?>
+
 <?php get_header(); ?>
 
-<!-- Start Middle - includes sidebar -->
+<!-- Start Middle - includes sidebar area -->
 <div class="middle">
 <!-- Start Content - does not include sidebar -->
-<div class="content page">
+<!--<div class="content page">-->
 
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); // start the loop ?>
-    <article class="blog-excerpt">
+  	<!-- Start About Page -->
+    <div class="about-content">
     
       <?php the_title("<h2>", "</h2>"); ?>
       
@@ -17,17 +20,17 @@
       <?php the_content(); ?>
       <?php // get_child_pages(); ?>
       
-    </article>
+    </div>
+    <!-- End About Content -->
+ 
   <?php endwhile; else : ?>
 	<p><?php // _e( 'Sorry, no posts matched your criteria.' ); ?></p>
   <?php endif; // end the loop ?>
   
-  <small>page.php</small>
+  <small>page-about.php</small>
 
-</div>
+<!--</div>-->
 <!-- End Content -->
-
-<?php get_sidebar(); ?>
 
 </div>
 <!-- End Middle -->

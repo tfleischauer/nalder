@@ -47,11 +47,11 @@
   
   <!-- Begin Widgets -->
   <div class="widget">
-      <?php dynamic_sidebar(1); // Subscribe & Calendar ?>
+      <?php dynamic_sidebar(1); // Search ?>
       <?php if (!( is_page() || is_search() || is_404() )) : ?>
-      <?php dynamic_sidebar(2); // Categories and Links ?>
+      <?php dynamic_sidebar(2); // Tag Cloud ?>
       <?php endif; ?>
-      <?php dynamic_sidebar(3); // video ?>
+      <?php dynamic_sidebar(3); // Extra Sidebar ?>
   </div>
   <!-- End Widgets -->
   
@@ -59,4 +59,5 @@
      
  </div>
  <!-- End Sidebar -->
+ 
 	

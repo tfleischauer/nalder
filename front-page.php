@@ -1,40 +1,39 @@
-<?php get_header(); ?>
+<?php get_header(); ?>  
 
+<!-- Start Middle -->
 <div class="middle">
 
 <!-- Start Flex Slider -->
 <?php add_flexslider(); ?>
 <!-- End Flex Slider -->
 
-<!-- Start Widgets -->
-<div id="widgets">
-    <section class="widget-item">
-        <h2>About Me:</h2>
-        <?php if ( have_posts() ) : while( have_posts() ) : the_post(); // start loop one ?>
-        <?php the_content(''); // get the home page's content ?>
-        <?php endwhile; endif; // end loop one ?>
-    </section>
-    <section class="widget-item">
-        <h2>Latest Postings:</h2>
-        <ul> <!-- needs to be outside the loop -->
-        <?php rewind_posts(); // stop loop one. Rewind the loop posts in order to re-use the same query in different locations on a page ?>
-        <?php query_posts('posts_per_page=4'); // give directions to loop two ?>
-        <?php while (have_posts()) : the_post(); // start loop two ?>
-        <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li> <!-- an li is within the loop -->
-        <?php endwhile; // end loop two ?>
-        </ul>
-    </section>
-    <section class="widget-item">
-        <h2>Contact Me:</h2>
-        <p><strong>Phone: </strong>206.543.2567<br><strong>Email: </strong><a href="mailto:sinkum@uw.edu">sinkum@uw.edu</a></p>
-        <p>428 Sieg Hall<br>University of Washington<br>Seattle, WA 98195</p> 
-    </section>
-</div>
-<!-- End Widgets -->
+<!-- Start Footer Basic -->       
+<footer class="footer-basic">
+	<p>&copy <?php print ("" . date ('Y') . ""); ?> Nan Nalder  <!--<a href="site-map.php">Site Map</a>-->
+</footer>
+<!-- End Footer Basic --> 
 
 <small>front-page.php</small>
 
 </div>
-<!-- End Middle -->
+<!-- End Middle --> 
 
-<?php get_footer() ?>
+<!-- begin validation buttons -->
+<!--<p class="validation">
+ <a href="http://validator.w3.org/check?uri=referer">
+  <img src="http://www.w3.org/html/logo/badge/html5-badge-h-solo.png" 
+  width="31" height="32" alt="valid HTML5" />
+ </a>
+ <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3">
+  <img src="http://jigsaw.w3.org/css-validator/images/vcss" 
+   alt="Valid CSS3" height="31" width="88" />
+ </a>
+</p>-->
+<!-- end validation buttons -->
+
+</div> 
+<!-- End Wrapper -->
+
+</body>
+</html>
+
