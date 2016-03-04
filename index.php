@@ -16,7 +16,7 @@
 	  	<?php the_title(); // put anchor tag around the title of the current post ?>&nbsp;&raquo;</a>
       </h3>
       
-      <small class="by-line">Posted on <?php the_time('F jS, Y') ?> by <?php the_author(); ?> in <?php the_category(', ') ?> <br/> <?php the_tags( 'Tags: ', ', ', '.' ); ?></small> <!-- the S in jS adds suffix such as 'th', as in Feb 6th -->
+      <small class="by-line">Posted on <?php the_time('F jS, Y') ?> by <?php the_author(); ?> in <?php the_category(', ') ?>. <br/> <?php the_tags( 'Tags: ', ', ', '.' ); ?></small> <!-- the S in jS adds suffix such as 'th', as in Feb 6th -->
       
       <a href="<?php the_permalink(); // links to page or posting ?>" rel="bookmark" title="Permanent Link to <?php the_title(); // put anchor tag around the URL for the permalink ?>">
 	  	<?php echo get_the_post_thumbnail( $post->ID, 'thumbnail'); ?>
