@@ -11,10 +11,6 @@
     
       <?php the_title("<h2>", "</h2>"); ?>     
       
-      <a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title(); // put anchor tag around the URL for the permalink ?>">
-	  	<?php echo get_the_post_thumbnail( $page->ID, 'thumbnail'); ?>
-      </a>
-      
       <?php the_content(); ?>
       <?php // get_child_pages(); ?>
       
