@@ -37,6 +37,12 @@ add_post_type_support( 'page', 'excerpt' );
 add_theme_support( 'html5', array( 'gallery') );
 // End Declare support for HTML5 Galleries and Captions
 
+// Enables 'WP Gallery Custom Links' plugin 
+// https://wordpress.org/plugins/wp-gallery-custom-links/
+add_filter( 'wpgcl_filter_raw_gallery_link_url', 'my_gallery_link_url_filter', 10, 3 );
+function my_gallery_link_url_filter( $link, $attachment_id, $post_id ) { return '' . $link; }
+// End Enables 'WP Gallery Custom Links' plugin 
+
 // Get My Title Tag by Mike Sinkula
 function get_my_title_tag() {
 	
@@ -102,5 +108,6 @@ function add_flexslider() {
 }
 // End Add Flexslider by Mike Sinkula
 
-?>
+// Note:  WP Admin will not allow log-in if there is any more than one blank line at the end of functions.php.
 
+?>

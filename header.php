@@ -17,8 +17,12 @@ Description: Custom theme for nannalder.com
 <!-- Start Meta -->
 <meta name="description" content="<?php echo strip_tags(get_the_excerpt()); ?>" />
 <meta name="keywords" content="">
+<!-- to prevent rescaling in iphone -->
 <!--<meta name="viewport" content="user-scalable=no, intial-scale=1.0, maximum-scale=1.0" />-->
+<!-- typical mobile optimized viewport (mdn) -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- earthship seattle viewport -->
+<!--<meta name="viewport" content="initial-scale=1">-->
 <!-- End Meta -->
 
 <!-- Start Links -->
@@ -52,13 +56,67 @@ Description: Custom theme for nannalder.com
 
 <!-- Start Toggle Menu -->
 <script>
-	/*$(window).load(function() { //enable function on window load
-		$("#toggle").click(function() { // when toggle is clicked
-			$("#navigation").toggle(); // open or close navigation
-		});
-	});*/
+	$(window).load(function() { // enable function on window load
 	
-	/*$(".current_page_parent").click().slideToggle('slow');*/
+		$("#toggle").click(function() { // when toggle is clicked
+		
+			$("nav#nav-main").slideToggle(); // open or close navigation
+			
+			return false; // disable anchor text target
+			
+		}); // end when toggle is clicked
+	
+	  var loadWidth = window.innerWidth; // save window load width as a variable
+	  
+	  $(window).resize(function() { // when the window is resized...
+	  
+			if (loadWidth !== window.innerWidth) { // trigger for width only
+			
+				if (window.innerWidth < 840) { // if width is less than 840px
+				
+					$("nav#nav-main").hide(); // hide main navigation items
+			
+				} else {
+				
+					$("nav#nav-main").show(); // show main navigation items
+					
+				} 
+				
+			} // end trigger for width only
+				
+		}); // end window.resize
+		
+		///////
+		
+		var loadWidth2 = window.innerWidth; // save window load width as a variable
+		
+		$(window).resize(function() { // when the window is resized...
+	  
+			if (loadWidth2 !== window.innerWidth) { // trigger for width only
+			
+				if (window.innerWidth < 725) { // if width is less than 725px
+				
+					// $(".about-content section div.wp-caption").removeClass("alignright");
+					// $(".about-content section div.wp-caption").addClass("alignleft");
+					
+					$('flex-active-slide').removeProp('width');
+			
+				} else {
+				
+					// $(".about-content section div.wp-caption").addClass("alignright");
+					
+				} 
+				
+			} // end trigger for width only
+				
+		}); // end window.resize
+		
+		
+		
+		
+		
+	  
+	}); // end enable function on window load
 	
 </script>
 <!-- End Toggle Menu -->
@@ -127,9 +185,9 @@ $('figcaption').parent().attr('href', function() {return $(this).parent().find('
     <!-- End Logo -->
     
     <!-- Start Toggle -->
-    <!--<div id="toggle">
-    	<a href="#"><span class="glyph">&#8801;</span>Menu</a>
-    </div>-->
+    <div id="toggle">
+    	<a href="#"><span class="glyph">&#8801;</span>&nbsp;MENU</a>
+    </div>
     <!-- End Toggle -->
     
 </header>
