@@ -36,26 +36,26 @@
      
   </div>
   <!-- End Sub-Navigation -->
-    
-  <!-- Begin Quote -->
-  <?php if(get_post_meta($post->ID, 'Quote', true)) : ?> <!-- 3 parameters: post ID, the key, the value. If the key of Quote exists. -->
-  <div class="widget">  
-        <blockquote> <?php echo (get_post_meta($post->ID, 'Quote', true)); ?> </blockquote> <!-- use echo to call the value -->
-  </div>   
-  <?php endif; ?>
-  <!-- End Quote -->
   
   <!-- Begin Widgets -->
   <div class="widget">
-      <?php dynamic_sidebar(1); // Search ?>
-      <?php if (!( is_page() || is_search() || is_404() )) : ?>
-      <?php dynamic_sidebar(2); // Tag Cloud ?>
+      <?php dynamic_sidebar(1); // Show on every page ?>
+	  <?php if (!( is_page() || is_search() || is_404() )) : // Show on every page except page.php, 404.php, and search.php ?>
+      <?php dynamic_sidebar(2); // Appears on index.php ?>
       <?php endif; ?>
-      <?php dynamic_sidebar(3); // Extra Sidebar ?>
+      <?php dynamic_sidebar(3); // Show on every page ?>
   </div>
   <!-- End Widgets -->
   
-  <small>sidebar.php</small>
+  <!-- Begin Quote -->
+  <?php if(get_post_meta($post->ID, 'Quote', true)) : ?> <!-- 3 parameters: post ID, the key, the value. If the key of Quote exists. -->
+    <div class="widget">  
+          <blockquote> <?php echo (get_post_meta($post->ID, 'Quote', true)); ?> </blockquote> <!-- use echo to call the value -->
+    </div>   
+  <?php endif; ?>
+  <!-- End Quote -->
+  
+  <!--<small>sidebar.php</small>-->
      
  </div>
  <!-- End Sidebar -->
