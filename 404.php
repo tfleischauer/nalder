@@ -5,13 +5,13 @@
 <!-- Start Content - does not include sidebar-->
 <div class="content fourzerofour">
   
-  <article id="page-content-<?php the_ID(); ?>" class="page-content">
-  	<h2>404 Error:</h2>
+  <div id="page-content-<?php the_ID(); ?>" class="page-content">
+  	<h1>404 Error:</h1>
   	<p>The page you are looking for does not exist... Try a search?</p>
   	<?php get_search_form(); ?>
-  </article>
+  </div>
   
-  <small>404.php</small>
+  <!--<small>404.php</small>-->
 
 </div>
 <!-- End Content -->

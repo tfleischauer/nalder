@@ -72,7 +72,7 @@ Description: Custom theme for nannalder.com
 	  
 			if (loadWidth !== window.innerWidth) { // trigger for width only
 			
-				if (window.innerWidth < 840) { // if width is less than 840px
+				if (window.innerWidth <= 860) { // if width is less than or equal to 860px
 				
 					$("nav#nav-main").hide(); // hide main navigation items
 			
@@ -172,7 +172,7 @@ $('figcaption').parent().attr('href', function() {return $(this).parent().find('
 
 </head>
 
-<body id="home" <?php body_class(); ?>>
+<body <?php body_class(); ?>>
 
 <!-- Start Wrapper -->
 <div id="wrapper">
@@ -181,7 +181,12 @@ $('figcaption').parent().attr('href', function() {return $(this).parent().find('
 <header>
 
 	<!-- Start Logo -->
-	<h1 id="logo"><a href="<?php echo get_settings('home'); ?>"><img src="<?php bloginfo('template_directory'); ?>/images/logo-nalder-no-bg-460x161px.png" alt="Nan Nalder logo" /></a></h1>
+	<div id="logo">
+    	<a href="<?php echo get_settings('home'); ?>" title="Link to Nan Nalder Artist Home Page">
+        	<img class="desktop" src="<?php bloginfo('template_directory'); ?>/images/logo-nalder-no-bg-357x125px.png" alt="Nan Nalder Artist logo" />
+            <img class="phone" src="<?php bloginfo('template_directory'); ?>/images/logo-nalder-no-bg-257x90px.png" alt="Nan Nalder Artist logo" />
+        </a>
+    </div>
     <!-- End Logo -->
     
     <!-- Start Toggle -->
@@ -197,5 +202,5 @@ $('figcaption').parent().attr('href', function() {return $(this).parent().find('
 <?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'container' => 'nav', 'container_id' => 'nav-main' ) ); ?>
 <!-- End Main Menu -->
 
-<small>header.php</small>
+<!--<small>header.php</small>-->
 

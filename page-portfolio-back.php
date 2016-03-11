@@ -8,7 +8,7 @@
 <!--<div class="content page">-->
   
   <div>
-    <span class="title-width"><?php the_title("<h2>", "</h2>"); ?></span>
+    <span class="title-width"><?php the_title("<h1>", "</h1>"); ?></span>
     <div id="nav-back-more"><span class="back"><?php echo previous_page_not_post('&laquo; Back'); ?></span></div>
   </div>
     
@@ -29,7 +29,7 @@
 	<p><?php // _e( 'Sorry, no posts matched your criteria.' ); ?></p>
   <?php endif; // end the loop ?>
   
-  <small>page-portfolio-back.php</small>
+  <!--<small>page-portfolio-back.php</small>-->
 
 <!--</div>-->
 <!-- End Content -->

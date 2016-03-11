@@ -9,7 +9,7 @@
   	<!-- Start About Page -->
     <div class="about-content">
     
-      <?php the_title("<h2>", "</h2>"); ?>     
+      <?php the_title("<h1>", "</h1>"); ?>     
       
       <?php the_content(); ?>
       <?php // get_child_pages(); ?>
@@ -21,7 +21,7 @@
 	<p><?php // _e( 'Sorry, no posts matched your criteria.' ); ?></p>
   <?php endif; // end the loop ?>
   
-  <small>page-artists-statement.php</small>
+  <!--<small>page-artists-statement.php</small>-->
 
 <!--</div>-->
 <!-- End Content -->

@@ -8,7 +8,7 @@
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); // start the loop ?>
     <div>
     
-      <?php the_title("<h2>", "</h2>"); ?>
+      <?php the_title("<h1>", "</h1>"); ?>
       
       <a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title(); // put anchor tag around the URL for the permalink ?>">
 	  	<?php // echo get_the_post_thumbnail( $page->ID, 'thumbnail'); ?>
