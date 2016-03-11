@@ -1,6 +1,10 @@
 <!-- Start Footer -->
 <footer>
 
+<!-- Start Footer Basic (displays on small screen sizes only)-->       
+<p class="footer-basic">&copy; <?php print ("" . date ('Y') . ""); ?> Nan Nalder  <!--<a href="site-map.php">Site Map</a>--></p>
+<!-- End Footer Basic --> 
+
 <!-- Start Footer Navigation -->
 <!--<nav id="nav-footer">-->
 <?php wp_nav_menu( array('theme_location' => 'footer-menu', 'container' => 'nav', 'container_id' => 'nav-footer')); ?>
@@ -10,9 +14,9 @@
     <ul>
       <li>&copy; <?php print ("" . date ('Y') . ""); ?> Nan Nalder</li>
       <li>  | </li>
-      <li><a href="site-map.php">Site Map</a></li>
+      <li><a href="<?php bloginfo('template_directory'); ?>/site-map">Site Map</a></li>
       <li> | </li>
-      <li>Site Credits</li>
+      <li><a href="<?php bloginfo('template_directory'); ?>/site-credit">Web Design</a></li>
       <li> | </li>
       <li><span class="login"><?php wp_loginout(); ?></span></li>
       <!--<li> | </li>-->
@@ -21,7 +25,7 @@
 </nav>
 <!-- End Footer Navigation -->
 
-<small>footer.php</small>
+<!--<small>footer.php</small>-->
 
 </footer>
 <!-- End Footer -->
