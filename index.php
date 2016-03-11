@@ -5,16 +5,16 @@
 <!-- Start Content - does not include sidebar-->
 <div class="content">
 
-  <h2><?php if (is_category()) { single_cat_title(); } else { single_post_title(); } ?></h2>
+  <h1><?php if (is_category()) { single_cat_title(); } else { single_post_title(); } ?></h1>
   <p><?php // get_seo(); ?></p>
   
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); // start the loop ?>
     <article class="blog-excerpt">
     
-      <h3 id="post-<?php the_ID(); ?>">
+      <h2 id="post-<?php the_ID(); ?>">
       	<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanant Link to <?php the_title(); ?>">
 	  	<?php the_title(); // put anchor tag around the title of the current post ?>&nbsp;&raquo;</a>
-      </h3>
+      </h2>
       
       <small class="by-line">Posted on <?php the_time('F jS, Y') ?> by <?php the_author(); ?> in <?php the_category(', ') ?>. <br/> <?php the_tags( 'Tags: ', ', ', '.' ); ?></small> <!-- the S in jS adds suffix such as 'th', as in Feb 6th -->
       
@@ -37,7 +37,7 @@
      <p class="alignright"><?php previous_posts_link('Newer Posts &raquo;') ?></p>
   	</nav>
   
-  <small>index.php</small>
+  <!--<small>index.php</small>-->
 
 </div>
 <!-- End Content -->
