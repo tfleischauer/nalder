@@ -1,7 +1,7 @@
 <?php get_header(); ?>  
 
 <!-- Start Middle -->
-<div class="middle">
+<div class="middle home-page">
 
 <!-- Start Flex Slider -->
 <?php add_flexslider(); ?>
@@ -9,11 +9,11 @@
 
 <!-- Start Footer Basic -->       
 <footer class="footer-basic">
-	<p>&copy <?php print ("" . date ('Y') . ""); ?> Nan Nalder  <!--<a href="site-map.php">Site Map</a>-->
+	<p>&copy; <?php print ("" . date ('Y') . ""); ?> Nan Nalder  <!--<a href="site-map.php">Site Map</a>-->
 </footer>
 <!-- End Footer Basic --> 
 
-<small>front-page.php</small>
+<!--<small>front-page.php</small>-->
 
 </div>
 <!-- End Middle --> 
