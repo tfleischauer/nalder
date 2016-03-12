@@ -3,7 +3,7 @@
 <?php get_header(); ?>
 
 <!-- Start Middle - includes sidebar area -->
-<div class="middle">
+<div class="middle portfolio">
 <!-- Start Content - does not include sidebar area -->
 <!--<div class="content page">-->
   
