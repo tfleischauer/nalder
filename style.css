@@ -6,7 +6,7 @@ Theme Name: Nalder
 Author: Troy Fleischauer
 Author URI: http://www.portfolio.troyfleischauer.com
 Description: Custom theme for nannalder.com
-Version: 160310
+Version: 160311
 */
 
 /* DEVO ONLY -- delete when no longer needed */
@@ -38,7 +38,8 @@ li {
 	background-color: darkseagreen;
 }*/
 
-/* bg color uncommented illustrates what is going on structurally in this list very well */
+/* bg color uncommented illustrates what is going 
+   on structurally in this list very well */
 /*#nav-main li a {
 	background-color: deeppink;  
 }
@@ -108,7 +109,8 @@ div#nav-back-more {
 /* END DEVO ONLY */
 
 /* START RESETS */
-/* this zeros out the default margin and padding styles on the body tag and everything nested inside the body tag. */
+/* This zeros out the default margin and padding styles on 
+   the body tag and everything nested inside the body tag. */
 body, body * { 
 	margin: 0;
 	padding: 0;		
@@ -116,7 +118,7 @@ body, body * {
 /* END RESETS */
 
 /* GLOBAL STYLES */
-/* prevents rezing of body copy on iphone */
+/* Prevents rezing of body copy on iphone. */
 html { 
 	-webkit-text-size-adjust: none; 
 	-webkit-text-size-adjust: none;
@@ -126,7 +128,9 @@ html {
 body { /* global font styles go on the body tag */
 	font-family: 'Century Gothic', 'Muli', 'Trebuchet MS', Helvetica, Arial, sans-serif;
 	font-size: 100%; /* 16px */
-	line-height: 1.5; /* 24px */ /* write 1.5 instead of 150%. Browser default is 118%, set to at least 1.3, range of 130 - 160 % is good. */
+	/* line-height - write 1.5 instead of 150%. Browser default is 118%, 
+	   set to at least 1.3, range of 1.3 - 1.6 is good. */
+	line-height: 1.5; /* 24px */ 
 	color: #333; /* Dark Grey */
 	background-color: #FFFFFF;
 }
@@ -134,14 +138,14 @@ body { /* global font styles go on the body tag */
 /* needs unique id if more than one header on the top */
 header {
 	/*overflow: hidden;*/
-	/*height: 161px; *//* height of logo */
+	/*height: 161px; */ /* height of logo */
 	height: 125px; /* height of logo */
 	padding-left: 35px; /* pushes logo to the right */
 	position: relative; /* for #toggle */
 }
 
 #logo img.desktop {
-	/*display: block;*/
+
 }
 
 #logo img.phone {
@@ -157,17 +161,13 @@ h1, h2, h3, h4 {
 	color: #333;
 }
 
-h2 {
-	/*font-size: 1.75em;*/ /* 28 / 16px = 175% */	
-}
-
 h3 {
 	margin-top: 15px; /* More space above headlines than below them is the rule. */	
 	margin-bottom: 5px;
 }
 
 a img { 
-	border: none;	/* Gets rid of blue border that IE puts around linked images */
+	border: none; /* Gets rid of blue border that IE puts around linked images */
 }
 
 a:link,
@@ -215,11 +215,13 @@ blockquote {
 	border-left: 3px solid #333;
 }
 
-/* makes the quote image line up next to the quote, otherwise the quote is above the p */
+/* Makes the quote image line up next to the quote, 
+   otherwise the quote is above the p */
 blockquote p {
   	display: inline;
 }
 
+/* small is an inline element */
 small {
 	display: block;	
 }
@@ -231,17 +233,17 @@ small {
 .to-top {
 	padding-top: 20px;
 	padding-bottom: 10px;
-	font-size: 0.875em;	/* 14px / 16px */ 
+	font-size: 0.875em;	/* 14px / 16px = .875em  */ 
 	font-variant: small-caps;
 }
 
-/* allows media to scale according to their parent elements */
+/* Allows media to scale according to their parent elements. */
 img, embed, object, video, iframe {
 	max-width: 100%;	
 }
 
-/* START CAPTIONS */
-figcaption {
+/* START WP GALLERY CAPTIONS ON TOP OF IMAGE */
+.gallery-item figcaption {
 	text-align: center;
 	background-color: rgba(255,255,255,.70);
 	font-size: 1.1em;
@@ -251,31 +253,13 @@ figcaption {
 	top: 125px;
 	right: 5px;
 	text-align: center;
-}
-
-a figcaption {
-	display: none;	
-}
-
-a:hover figcaption {
-	display:block;	
-}
-
-/* START DISPLAY WP GALLERY CAPTIONS ON TOP OF IMAGE */
-figcaption {
 	display: none;
 }
 
 .gallery-item:hover figcaption {
 	display: block;
 }
-/* END DISPLAY WP GALLERY CAPTIONS ON TOP OF IMAGE */
-
-/* fun with caption styles */
-/*.wp-caption { position:relative }
-p.wp-caption-text { display:none;}
-.wp-caption:hover p.wp-caption-text {display:block;position:absolute;bottom:-1px;left:-5px;background: #f4f4f4;width:100%; }*/
-/* END CAPTIONS */
+/* END WP GALLERY CAPTIONS ON TOP OF IMAGE */
 /* END GLOBAL STYLES */
 
 /* LAYOUT STYLES */
@@ -337,7 +321,6 @@ section {
 	color: #333;
 	text-decoration:none;
 	display: block; /* fill the list item */
-	/*padding: 1em 1.25em 1em 0em;*/ /* 16px / 16px = 1em,  20px / 16px = 1.25em */
 	padding: 10px 0px 10px 0px;
 	text-align: right;
 	border-bottom: none;
@@ -355,7 +338,7 @@ section {
 }
 
 /* START 'YOU ARE HERE' STATE INDICATORS (CURRENT SELECTED MENU ITEM) */
-/* top level nav-main */
+/* START TOP LEVEL NAV-MAIN */
 #nav-main ul li.current-menu-item a {
 	color: #333;
 	text-decoration: underline;
@@ -364,45 +347,34 @@ section {
 #nav-main ul li.current-menu-item ul li a {
 	text-decoration: none;	
 }
+/* END TOP LEVEL NAV-MAIN */
 
-/* Start Portfolio navigation */
-/* Start current page ancestor */
+/* START PORTFOLIO NAVIGATION */
+/* START CURRENT PAGE ANCESTOR */
 ul#menu-main li.menu-item-has-children li.current-page-ancestor a {
 	color: #333;
 	text-decoration: underline;
 }
-/* End current page ancestor */
-/* End Portfolio navigation */
+/* END CURRENT PAGE ANCESTOR */
+/* END PORTFOLIO NAVIGATION */
 
-/* Start single.php nav-main */
+/* START NAV-MAIN ON SINGLE.PHP */
 .single ul#menu-main li.current_page_parent a {
 	color: #333;
 	text-decoration: underline;
 }
-/* End single.php nav-main */
+/* END NAV-MAIN ON SINGLE.PHP */
 
-/* if on archive template (ex. for blog category), make the URL show you are here state */
-/*.category ul#menu-main li.current_page_parent a */
+/* START ARCHIVE & CATEGORY TEMPLATE 'YOU ARE HERE' STATE INDICATOR */
+.category ul#menu-main li.current_page_parent a, 
 .archive ul#menu-main li.current_page_parent a  {
 	color: #333;
 	text-decoration:underline;	
 }
+/* END ARCHIVE & CATEGORY TEMPLATE 'YOU ARE HERE' STATE INDICATOR */
+/* END 'YOU ARE HERE' STATE INDICATORS (CURRENT SELECTED MENU ITEM) */
 
-#nav-footer ul li.current-menu-item a,
-#nav-footer ul li.current-page-ancestor a,
-#nav-footer ul li.current_page_parent a {
-	color: #333;
-	text-decoration:underline;
-}
-
-/* Sidebar Navigation Using Custom Fields */
-li.page_item.current_page_item a {
-	border-bottom: 1px solid #333;
-	text-decoration: none;
-	border-bottom-color: #333;
-}
-
-/* Start open or close sub-menu */
+/* START OPEN OR CLOSE SUB-MENU */
 .sub-menu { 
 	display: none; 
 }
@@ -412,8 +384,6 @@ li.page_item.current_page_item a {
 .current-page-ancestor .sub-menu { 
 	display: block; 
 }
-/* End open or close sub-menu */
-/* END 'YOU ARE HERE' STATE INDICATORS (CURRENT SELECTED MENU ITEM) */
 
 #toggle {
 	display: none;
@@ -429,259 +399,114 @@ li.page_item.current_page_item a {
 #toggle a {
 	color: #333;
 }
+/* END OPEN OR CLOSE SUB-MENU */
 /* END NAV-MAIN STYLES */
 
-/* GATEWAY NAVIGATION STYLES */
-body.about #nav-main ul#about-sub,
-body.portfolio #nav-main ul#portfolio-sub {	
-	/*display: block;*/
-	font-size:44%; /* ~ 7px / 16px */
-	text-align: right;
-	line-height: .75;	
+/* START FRONT PAGE STYLES */
+div.home-page  {
+		padding-top: 15px;
 }
-
-body.portfolio-garden #nav-main ul.portfolio-sub {	
 	
+/* FRONT PAGE FLEXSLIDER STYLES */
+.flexslider { /* the containing div that the images are in */
+	border: none !important;
+	background: pink !important;
+	width: 500px;
+	margin-bottom: 10px !important;	
 }
 
-/*.artist-statement .about-link {
-	text-decoration: underline;	
-}*/
-
-/*#artist-statement .about-link {
-	text-decoration: underline;	
-}*/
-
-#home .home-link,
-.about .about-nan-link,
-#artist-statement .about-artist-link,
-#bio .about-nan-link,
-
-#portfolio-home .portfolio-link,
-#portfolio-abstract .abstract-link,
-#portfolio-garden .garden-link,
-#portfolio-land-sea .land-link,
-#portfolio-vestments .vestments-link,
-
-#events .events-link,
-#instruction .instruction-link,
-#contact .contact-link {
-	/*text-decoration: underline;*/	
-}
-/* END GATEWAY NAVIGATION STYLES */
-
-/*---------- START GALLERY STYLES ----------*/
-/* PORTFOLIO GATEWAY PAGE STYLES */
-.page .middle a img {
-	border: 5px solid #333;	
-	margin: 0 0 0 0;
+.flexslider .slides img {
+	width: 480px !important;
 	display: block;
+	height: 687px !important;
+	border: 10px solid #333;
 }
 
-.page .middle a:hover img {
-	border: 5px solid #000;	
+.flex-direction-nav a {
+	border-bottom: none !important;
 }
 
-p.wp-caption-text {
-	text-align: center;
-	background-color: rgba(255,255,255,.70);
-	font-size: 1.25em;
+.flex-direction-nav a:before  { 
+   font-size: 2.125em !important; /* 34 /16 */
 }
 
-.gallery div.wp-caption p.wp-caption-text,
-.gallery div.wp-caption p.wp-caption-text {
-	display: none;	
+/* Controls the positioning of the indicator dots. */
+.flex-control-nav {
+	bottom: 15px !important;
+	z-index: 2 !important;	
 }
 
-.gallery div#wp-caption a:hover > p.wp-caption-text,
-.gallery div#wp-caption a:focus > p.wp-caption-text {
-	display: block;	
+/* Controls the color of the inactive indicator dots. */
+.flex-control-paging li a {
+	background: #FFF !important;
+	opacity: 0.5 !important;	
 }
 
-/*#content-one p,
-#content-two-three p,
-#column2 p,
-#column3 p {
-	margin: 0;
+/* Controls the color of the active indicator dot. */
+.flex-control-paging li a.flex-active {
+	background: #333 !important;
+	opacity: 0.75 !important;	
+}
+/* END FRONT PAGE FLEXSLIDER STYLES */
+/* END FRONT PAGE STYLES */	
+
+/* START ABOUT PAGE STYLES */
+.about-content p,
+.about-content a,
+.about-content h1,
+.about-content h2,
+.about-content h3,
+.about-content h4,
+.about-content h5,
+.about-content h6,
+.about-content blockquote,
+.about-content ul,
+.about-content ol {
+	max-width: 460px;
+	padding-right: calc(100% * (10/460));
+}
+
+.about-content .wp-caption {
+	padding: 0;
+	margin: 0;	
+	border: none;
+	clear: both;
+} 
+
+.about-content .wp-caption p.wp-caption-text {
 	padding: 0;	
-	line-height: 0;
+	margin: 0;
+	width: inherit;
+	/*width: 100%;*/
+	text-align: center;
 }
+/* END ABOUT PAGE STYLES */
 
-#content-one a,
-#content-two-three a,
-#column2 a,
-#column3 a {
-	border-bottom: none;
-	overflow: none;	
-}*/
-/* END PORTFOLIO GATEWAY PAGE STYLES */
-
-/* PORTFOLIO DESTINATION - WP GALLERY STYLING */
-/* TUTORIAL: http://logoscreative.co/styling-html5-wordpress-gallery/ */
-.gallery {
-  margin: auto;
-}
-
-.gallery .gallery-item {
-  float: left; /* Change to 'right' if RTL is enabled */
-  margin-top: 10px;
-  text-align: center;
-}
-
-.gallery img {
- /* border: 2px solid #cfcfcf;*/
-  display: block;
-}
-
-.gallery .gallery-caption {
-  margin-left: 0;
-}
-
-.gallery figure {
-	margin-right: 20px;	
-	margin-bottom: 10px;
-	margin-left: 0;
-}
-
-.gallery figure:nth-child(3n+0) {
-	margin-right: 0px;	
-}
-
-/*div.wp-caption p.wp-caption-text,
-div.wp-caption p.wp-caption-text,*/
-/*#gallery-1 a figcaption {
-	display: none;	
-}*/
-
-/*div#wp-caption a:hover > p.wp-caption-text,
-div#wp-caption a:focus > p.wp-caption-text,*/
-/*#gallery-1 a:hover figcaption {
-	display: block;	
-}*/
-
-.gallery a {
-	border-bottom: none;
-	/*overflow: none;	*/
-}
-
-a#prevLink,
-a#nextLink,
-a#bottomNavClose,
-a#playPause {
-	border-bottom: none;	
-}
-/* END PORTFOLIO DESTINATION - WP GALLERY STYLING */
-
-/* START NAV-SERIES STYLES - STATIC TEMPLATES */
-/*#garden-dahlias .garden-link,
-#garden-fish .garden-link,
-#garden-vases .garden-link,
-#garden-mixed .garden-link,
-#garden-passion .garden-link,
-#garden-spring .garden-link,
-#garden-summer .garden-link,
-#garden-sunflowers .garden-link,
-#garden-frida .garden-link {
-	text-decoration: underline;	
-}
-*/
-/* contains the description and series nav */
-/*.series-info {
-	padding:5px;	
-}*/
-
-/* contains the h4 and the p */
-/*.description-series {
-	width:445px;
-	font-size: .55em;
-	clear:both;
-	float:left;
-	display: block;
-}*/
-
-/*.description-series h4 {
-	font-size: 1.5em;
-}*/
-
-.nav-series {
-	/*clear:right;
-	font-size: .55em;
-	width:220px;*/ /* original 210px; */
-	/*float:right;*/	
-}
-
-/*.nav-series h4 {
-	font-size:150%;
-}
-
-.nav-series a:link,
-.nav-series a:visited {
-	border-bottom:none;
-}
-
-.nav-series a:hover,
-.nav-series a:focus {
-	text-decoration: underline;
-}
-
-#garden-dahlias .fl-dahlias-link,
-#garden-sunflowers .fl-sunflower-link,
-#garden-fish .fl-fish-link
-#garden-vases .fl-vases-link,
-#garden-mixed .fl-mixed-link,
-#garden-passion .fl-passion-link,
-#garden-spring .fl-spring-link,
-#garden-summer .fl-summer-link,
-#garden-frida .fl-frida-link {
-	font-weight:bold;
-}*/
-/* END NAV-SERIES STYLES - STATIC TEMPLATES */
-
-/* GALLERY STYLES */
-/* , means 'or' space would mean 'nesting' putting together like below means 'same level' */
+/* START PORTFOLIO & GALLERY STYLES */
+/* START GLOBAL GALLERY STYLES */
 .middle.portfolio {
-	/*border: 5px solid #004;*/	
-	/*border: 5px solid #333;*/	
 	margin-top: 5px;													
 }
 
-.portfolio img { /* Don't control border here, this is for margin */
-	display:block;
-	margin-bottom:20px;	
-	/*height:210px;*/	
+/* Don't control border here, this is for margin. */
+.portfolio img { 
+	display: block;
+	margin-bottom: 20px;	
 }
 
-.portfolio .middle img {
-	/* border: 5px solid #004;	*/	
-	border: 5px solid #333;	 /* puts the border we want around Nan's thumbnails CCC */												
-}
-	   
-.portfolio .middle a:hover img, 
-.portfolio .middle a:focus img {
-	/*border: 5px solid rgba(51,51,51,.80);*/
-	border: 5px solid #000000;
+/* Puts the border we want around Nan's thumbnails (or use #CCC) */	
+.middle.portfolio a img {	
+	border: 5px solid #333;	
+	margin: 0 0 0 0; 											
 }
 
-/*#content-one {
-	width:220px;
-	float:left;
+/* Border gets darker when hovering */	   
+.middle.portfolio a:hover img, 
+.middle.portfolio a:focus img {
+	/*border: 5px solid rgba(51,51,51,.80); same as rgb #333 */
+	border: 5px solid #000;
 }
 
-#content-two-three {
-	width:460px;
-	float:right;
-}
-
-#column2 {
-	width:220px;
-	float:left;
-}
-
-#column3 {
-	width:220px;
-	float:right;
-}
-*/
 .title-width {
 	width: 460px;	
 	display: inline-block;
@@ -714,40 +539,9 @@ a#playPause {
 	float:right;
 }
 
-.page-template-page-portfolio-back-more #nav-back-more,
-.page-template-page-portfolio-back #nav-back-more,
-.page-template-page-portfolio-more #nav-back-more {
-	/*visibility: visible;*/	
-}
-
-/*#nav-back-more {
-	visibility: hidden;	
-}*/
-
-/*.page-template-page-portfolio #nav-back-more {
-	visibility: visible;	
-}*/
-
-/*.page-template-page-portfolio-back-more #nav-back-more,
-.page-template-page-portfolio-back #nav-back-more,
-.page-template-page-portfolio-more #nav-back-more {
-	width:220px;
-	text-align:right;
-	float:right;	
-	height:27px;
-	
-	display: inline-block;
-	float: right;
-	outline: 1px solid black;
-	padding-top: 15px;	
-}*/
-
-
-
 figure {
 	position: relative;	
 }
-/* END GALLERY STYLES */
 
 /* Portfolio Series Description */
 .page-template-page-portfolio p,
@@ -757,74 +551,70 @@ figure {
 	font-size: .55em;	
 	max-width: 445px;
 }
-/*---------- END GALLERY STYLES ----------*/
+/* END GLOBAL GALLERY STYLES */
 
-/* START FRONT PAGE STYLES */
-div.home-page  {
-		padding-top: 15px;
-}
-	
-/* FRONT PAGE FLEXSLIDER STYLES */
-.flexslider { /* the containing div that the images are in */
-	border: none !important;
-	background: pink !important;
-	width: 500px;
-	margin-bottom: 10px !important;	
+/* START WORDPRESS GALLERY STYLES */
+/* PORTFOLIO GATEWAY PAGE STYLES - WP GALLERY STYLES */
+p.wp-caption-text {
+	text-align: center;
+	background-color: rgba(255,255,255,.70);
+	font-size: 1.25em;
 }
 
-.flexslider .slides img {
-	width: 480px !important;
-	display: block;
-	height: 687px !important;
-	border: 10px solid #333;
-}
-
-/* Removes post field paragraph tags that could be used in add_flexslider in functions.php */
-/*.flexslider p {
+.gallery div.wp-caption p.wp-caption-text,
+.gallery div.wp-caption p.wp-caption-text {
 	display: none;	
-}*/
-
-.flex-direction-nav a {
-	border-bottom: none !important;
 }
 
-.flex-direction-nav a:before  { 
-   font-size: 2.125em !important; /* 34 /16 */
+.gallery div#wp-caption a:hover > p.wp-caption-text,
+.gallery div#wp-caption a:focus > p.wp-caption-text {
+	display: block;	
+}
+/* END PORTFOLIO GATEWAY PAGE STYLES - WP GALLERY STYLES */
+
+/* PORTFOLIO DESTINATION - WP GALLERY STYLES */
+/* TUTORIAL: http://logoscreative.co/styling-html5-wordpress-gallery/ */
+.gallery {
+  margin: auto;
 }
 
-/* controls the positioning of the indicator dots */
-.flex-control-nav {
-	bottom: 15px !important;
-	z-index: 2 !important;	
+.gallery .gallery-item {
+  float: left; /* Change to 'right' if RTL is enabled */
+  margin-top: 10px;
+  text-align: center;
 }
 
-/* controls the color of the inactive indicator dots */
-.flex-control-paging li a {
-	background: #FFF !important;
-	opacity: 0.5 !important;	
+.gallery img {
+  display: block;
 }
 
-/* controls the color of the active indicator dot */
-.flex-control-paging li a.flex-active {
-	background: #333 !important;
-	opacity: 0.75 !important;	
-}
-/* END FRONT PAGE FLEXSLIDER STYLES */
-
-/* START "BASIC" FOOTER STYLES - NO NAV (front-page.php) */
-footer.footer-basic {
-	width: 500px;
-	float: none;
-	padding: 0;
-	font-size: .75em; /* 12px /16px */
-	text-align: right;
+.gallery .gallery-caption {
+  margin-left: 0;
 }
 
-footer p.footer-basic {
-		display: none;	
+.gallery figure {
+	margin-right: 20px;	
+	margin-bottom: 10px;
+	margin-left: 0;
 }
-/* END "BASIC" FOOTER STYLES - NO NAV (front-page.php) */
-/* END FRONT PAGE STYLES */	
+
+.gallery figure:nth-child(3n+0) {
+	margin-right: 0px;	
+}
+
+.gallery a {
+	border-bottom: none;
+}
+
+a#prevLink,
+a#nextLink,
+a#bottomNavClose,
+a#playPause {
+	border-bottom: none;	
+}
+/* END PORTFOLIO DESTINATION - WP GALLERY STYLES */
+/* END WORDPRESS GALLERY STYLES */
+/* END PORTFOLIO & GALLERY STYLES */
 
 /* START INDEX.PHP STYLES (BLOG PAGE) */
 .content article.blog-excerpt {
@@ -860,84 +650,38 @@ ul.post-navigation {
 div#respond {
 	clear: both;	
 }
+
+/* Name, Mail, Website */
+#respond input {
+	height: 32px;	
+	margin-bottom: 5px;
+}
 /* END SINGLE.PHP */
 
-/* START SITE MAP STYLES */
-#site-map a:link,
-#site-map a:visited {
-	border-bottom:none;		
+/* START SIDEBAR NAVIGATION USING CUSTOM FIELDS */
+li.page_item.current_page_item a,
+.category .current-cat a {
+	border-bottom: 1px solid #333;
+	text-decoration: none;
+	border-bottom-color: #333;
 }
+/* END SIDEBAR NAVIGATION USING CUSTOM FIELDS */
 
-#site-map a:hover,
-#site-map a:focus {
-	text-decoration: underline;	
-}
-
-#site-map ul {
-	list-style-type:disc;	
-}
-
-#site-map ul ul {
-	font-size:85%;	
-}
-/* END SITE MAP STYLES */
-
-/* START ABOUT PAGE STYLES */
-.about-content p,
-.about-content a,
-.about-content h1,
-.about-content h2,
-.about-content h3,
-.about-content h4,
-.about-content h5,
-.about-content h6,
-.about-content blockquote,
-.about-content ul,
-.about-content ol {
-	max-width: 460px;
-	/*padding-right: 10px;*/
-	padding-right: calc(100% * (10/460));
-}
-
-.about-content h2 {
-	/*margin-top: 15px;*/
-	/*margin-top: 5px;*/	
-}
-
-.about-content .wp-caption p.wp-caption-text {
-	padding: 0;	
-	margin: 0;
-	width: inherit;
-	/*width: 100%;*/
-	text-align: center;
-}
-
-.about-content .wp-caption {
+/* START FOOTER STYLES */
+/* START 'BASIC' FOOTER STYLES - NO NAVIGATION (front-page.php) */
+footer.footer-basic {
+	width: 500px;
+	float: none;
 	padding: 0;
-	margin: 0;	
-	border: none;
-	clear: both;
-} 
-
-.about-content .wp-caption p.wp-caption-text {
-	padding: 0;	
-	margin: 0;
-	width: inherit;
-	/*width: 100%;*/
-	text-align: center;
-	/*margin-top: 5px;*/
-	margin-top: -20px;
+	font-size: .75em; /* 12px /16px */
+	text-align: right;
 }
 
-.about-content .wp-caption {
-	padding: 0;
-	margin: 0;	
-	border: none;
-	clear: both;
+footer p.footer-basic {
+		display: none;	
 }
-/* END ABOUT PAGE STYLES */
+/* END 'BASIC' FOOTER STYLES - NO NAVIGATION (front-page.php) */
 
-/* FOOTER STYLES */
 footer {
 	clear: both;
 	width: 700px;
@@ -946,8 +690,10 @@ footer {
 	text-align: left;
 	font-size: 0.875em; /* 14px / 16px */
 	color: #808080; /* light grey */
-	/*height: 80px; */ /* if height is removed, to accomodate floated columns of text, replace with overflow:hidden; 
-					this will make the footer expand down to enclose the footer's floated contents */
+	/*height: 80px; */ 
+	/* if height is removed, to accomodate floated columns of text, 
+	   replace with overflow:hidden; this will make the footer expand 
+	   down to enclose the footer's floated contents */
 	overflow: hidden;
 }
 
@@ -1012,7 +758,6 @@ nav#nav-footer li {
 
 .nav-footer-utility ul {
 	clear:both;
-	/*width: 460px;*/
 	padding: 0;
 	padding-left: 0;
 	font-size: .625em; /* 10px / 16px */
@@ -1036,70 +781,37 @@ nav#nav-footer li {
 nav#nav-footer {
 	margin-bottom: 0;
 }
+
+/* START NAV-FOOTER 'YOU ARE HERE' STYLES */
+#nav-footer ul li.current-menu-item a,
+#nav-footer ul li.current-page-ancestor a,
+#nav-footer ul li.current_page_parent a {
+	color: #333;
+	text-decoration:underline;
+}
+/* END NAV-FOOTER 'YOU ARE HERE' STYLES */
 /* END FOOTER NAVIGATION STYLES */
 
-/* Century Gothic copyright symbol is so wide that it gets clipped on the left side. */
+/* START SITE MAP STYLES */
+.wsp-pages-list,
+.wsp-posts-list,
+.wsp-category-title {
+	font-size: .85em;	
+}
+
+.wsp-pages-title,
+.wsp-posts-title {
+	text-transform: capitalize;
+}
+/* END SITE MAP STYLES */
+
+/* Century Gothic copyright symbol is so wide 
+   that it gets clipped on the left side. */
 #copyright {
-	/*padding-left:1px;*/
+	padding-left: 1px;
 	/*word-spacing:6px;*/	
 }
 /* END FOOTER STYLES */
-
-/* VALIDATION LINK STYLES */
-.validation a:link,
-.validation a:visited,
-.validation a:hover,
-.validation a:focus {
-	text-decoration:none;
-	border-bottom:none;
-	display:inline;
-	text-align:center;
-}
-/* END VALIDATION LINK STYLES */
-
-/* START STATIC CONTACT FORM STYLES */
-/* TABLE STYLES */
-table {
-	width: 640px;
-}
-
-.form-labels {
-	text-align: right;
-	vertical-align:top;	
-}
-
-th, td {
-	padding: 5px;	
-}
-
-fieldset {
-	-moz-box-shadow: 4px 4px 4px #777777;
-	-webkit-box-shadow: 4px 4px 4px #777777;
-	box-shadow: 4px 4px 4px #777777;
-	width: 620px;
-	padding-bottom:20px;
-	margin-bottom:30px;	
-}
-
-legend {
-	font-family: Rockwell, 'Kameron', 'Gilda Display', Georgia, serif;	
-	font-size: 1.25em; /* 20px / 16px */
-	padding: 0px 8px 0px 8px;
-}
-
-.first-row {
-	width:220px;		
-}
-
-fieldset#last-table {
-	/*margin-bottom:10px;*/
-}
-
-#contact-thanks {
-	margin-bottom:25px;
-}
-/* END TABLE STYLES */
-/* END STATIC CONTACT FORM STYLES */
 
 /* START CONTACT FORM 7 STYLES */
 .wpcf7 p {
@@ -1233,15 +945,13 @@ a img.aligncenter {
 }
 
 .content.img {
-	/* Sinkula will switch to box model for images, the borders and padding will be inside the image's width */
-	/* good for responsive to keep the borders and padding the same as the stated width */
-	/* helps with problems for the width of the image */
-	/* this is good to have the same padding and border on the image without 
+	/* Sinkula will switch to box model for images, the borders and padding will be inside the image's width. */
+	/* Good for responsive design to keep the borders and padding the same as the stated width. */
+	/* Helps with problems for the width of the image. */
+	/* Good to have the same padding and border on the image without 
 	   having to calculate percentages when using responsive sizes. */
-	/* ex: could just call it 100px w/o having to subtract the amount of padding and border from the content. */
+	/* Ex: Could just call it 100px w/o having to subtract the amount of padding and border from the content. */
 	box-sizing: border-box; 
-	/*border: 1px solid #000;
-	padding: 4px;	*/
 }
 
 .content img.featured {
@@ -1328,11 +1038,11 @@ a img.aligncenter {
 .foogallery-gallery-289 a:hover img, 
 .foogallery-gallery-289 a:focus img {
 	/*border: 5px solid rgba(51,51,51,.80);*/
-	border: 5px solid #000000 !important;
+	/*border: 5px solid #000000 !important;*/
 }
 
 .foogallery-gallery-289 a:link {
-	border-bottom: none;	
+	/*border-bottom: none;*/	
 }
 
 a.fbx-next.fbx-btn-transition.fbx-btn-shadow {
@@ -1342,9 +1052,6 @@ a.fbx-next.fbx-btn-transition.fbx-btn-shadow {
 .fbx-light .fbx-inner {
   /*background-color: rgba(0, 0, 0, 0.8) !important;*/
 }
-
-/* foogallery-container foogallery-default foogallery-link-image foogallery-lightbox-unknown 
-spacing-width-10 hover-effect-zoom hover-effect-caption  alignment-left hover-caption-simple */
 
 /*.foogallery-default,*/
 .foogallery-caption {
@@ -1368,13 +1075,15 @@ spacing-width-10 hover-effect-zoom hover-effect-caption  alignment-left hover-ca
    top: auto;
 }
 
-.tp-info, .tp-title {
+.tp-info, 
+.tp-title {
    top: auto;
    width: 100%;
    text-align: left !important;
    bottom: 0;
 }
 
+/* START FOOBOX STYLES */
 .fbx-rounded .fbx-inner {
    border: 8px solid transparent;
    border-radius: 0 !important; 
@@ -1385,14 +1094,26 @@ a#close_overlays {
 	border-bottom: none;
 }
 
-.fbx-light .fbx-inner {border-color: #F5F5DC;}
-.fbx-light .fbx-inner, .fbx-light .fbx-loader, .fbx-light .fbx-close, .fbx-light .fbx-prev, .fbx-light .fbx-next, .fbx-light .fbx-play, .fbx-light .fbx-pause, .fbx-light .fbx-fullscreen-toggle, .fbx-light .fbx-social-toggle, .fbx-rounded.fbx-light.fbx-inset-buttons .fbx-prev:before, .fbx-rounded.fbx-light.fbx-inset-buttons .fbx-next:before {
+.fbx-light .fbx-inner, 
+.fbx-light .fbx-loader, 
+.fbx-light .fbx-close, 
+.fbx-light .fbx-prev, 
+.fbx-light .fbx-next, 
+.fbx-light .fbx-play, 
+.fbx-light .fbx-pause, 
+.fbx-light .fbx-fullscreen-toggle, 
+.fbx-light .fbx-social-toggle, 
+.fbx-rounded.fbx-light.fbx-inset-buttons .fbx-prev:before, 
+.fbx-rounded.fbx-light.fbx-inset-buttons .fbx-next:before {
  	background-color: #F5F5DC;
 }
 
 /* Controls the black semi-transparent
     background for modern browsers */
-.fbx-modal {background: rgba(0,0,0,.7) none !important;}
+.fbx-modal {
+	background: rgba(0,0,0,.7) none !important;
+}
+
 /* Controls the glow around the image.
    This is the default style */
 .fbx-inner {
@@ -1401,12 +1122,15 @@ a#close_overlays {
     -webkit-box-shadow:0 0 12px #000;
     -webkit-box-shadow:0 0 12px rgba(0,0,0,.8);
     box-shadow:0 0 12px #000;
-    box-shadow:0 0 12px rgba(0,0,0,.8)}
+    box-shadow:0 0 12px rgba(0,0,0,.8)
+}
+
 /* Change the appearance for navigation on larger screens */
  .fbx-prev {}
  .fbx-next {}
  .fbx-close {}
  .fbx-fullscreen-toggle {}
+ 
 /* Controls the look of the FooBox Captions */
  .fbx-caption {}
  .fbx-caption-title {}
@@ -1426,63 +1150,36 @@ a#close_overlays {
 .fbx-tablet.fbx-modal {}
 
 .fbx-tablet.fbx-caption {}
+/* END FOOBOX STYLES */
 /* END FOO GALLERY STYLES */
-
-.gateway-row-one,
-.gateway-row-two,
-.gateway-row-three {
-	/*overflow: hidden;*/
-	/*display: block;*/
-	/*clear: both*/;
-}
-
-.gateway-row-one a img,
-.gateway-row-two a img,
-.gateway-row-three a img {
-	/*display: inline-block;*/
-	/*padding: 0;*/
-	/*margin-right: 20px;
-	float: left;*/
-	/*display: inline-block;*/
-}
-
-.gateway-row-one a img:nth-child(3n+0),
-.gateway-row-two a img:nth-child(3n+0),
-.gateway-row-three a img:nth-child(3n+0) {
-	/*margin-right: 0;*/	
-}
 
 /* Desktop & Mobile Screens Set to 860px and Below */
 @media screen and (max-width: 860px) {
-	
   	body {
 		padding: 0;
 	}
+	
+	#wrapper {
+		margin: 0;
+	}
 
 	header {
-		background-image: none;
-		/*background-color: #C4122F;*/
-		max-width: 700px;
 		width: auto;
 		margin: 0 auto;
-		/*padding: 10px 20px;*/
-		/*overflow: hidden;*/
+		overflow: hidden;
 		max-width: 700px;
 		padding: 0;
 	}
 	
 	.middle {
 		float: none;
-		/*margin: auto;*/
-		/*width: auto;*/
 		margin: 0 auto;
-		/*padding: 10px 20px;*/
 		padding-top: 15px;
 		overflow: hidden;
 	}
 	
-	#wrapper {
-		margin: 0;
+	footer.footer-basic {
+		float: left;
 	}
 	
 	footer {
@@ -1500,10 +1197,7 @@ a#close_overlays {
 		width: auto;
 		max-width: 700px;
 		margin: 0 auto;
-		/*padding: 0px 20px;*/
-	}
-	
-	nav#nav-main {
+		padding-left: 5px;
 		float: none;
 	}
 	
@@ -1517,8 +1211,6 @@ a#close_overlays {
 	
 	#menu-main li {
 		line-height: 1.25;
-		/*display: block;*/
-		/*text-align: left;*/
 		margin-bottom: 0px;
 		border-bottom: 1px solid #DDD;
 	}
@@ -1531,27 +1223,11 @@ a#close_overlays {
 		border-bottom: none;
 	}
 		
-	#menu-main li a {
-		/*display: block;
-		border-bottom: 1px solid #DDD;*/
-	}
-	
-	/*#menu-main li ul.sub-menu {
-		position: relative;
-		border: none;
-	}*/
-		
-	/*#menu-main li:hover ul.sub-menu {
-		position: relative;
-		display: none;
-	}*/
-	
 	#menu-main ul.sub-menu li {
 		line-height: 1.25;
 		display: block;
 		text-align: left;
 		margin-bottom: 0px;
-		/*border: none;*/
 		margin-left: 10px;
 	}
 		
@@ -1562,85 +1238,32 @@ a#close_overlays {
 		display: block;
 	}
 	/* END NAV-MAIN STYLES */
-	
-	footer.footer-basic {
-		float: left;
-	}
-			
 }
 
 @media screen and (max-width: 768px) {
- /* START FOOGALLERY STYLES */
-	 /* Show caption to avoid Mystery Meat Navigation (no mouse hovering on phones!) */
-	 /* Accomodates iPad portrait view and all phones including iPhone 6 Plus @736px width */
-	 /* .foogallery-link-custom is for gateway pages (as opposed to gallery pages) */
-	 .foogallery-link-custom.foogallery-default.hover-effect-caption.hover-caption-simple .foogallery-caption {
-		  /* default styles */
-		  /*bottom: 0;
-		  display: block;
-		  left: 0;
-		  text-align: center;*/ /*
-		  -moz-transform: translateY(100%);
-		  -o-transform: translateY(100%);
-		  -webkit-transform: translateY(100%);*/
-		  /*transform: translateY(100%);*/
-		  
-		  /* custom styles */
-		  -moz-transform: translateY(0%) !important;
-		  -o-transform: translateY(0%) !important;
-		  -webkit-transform: translateY(0%) !important;
-		  transform: translateY(0%) !important;
-	  }
-	  
-	  /* START BLACK TEXT ON WHITE CAPTION */
-	  /*.foogallery-default .foogallery-caption {*/
-		  /* default styles */
-		  /*display: none;
-		  background-color: rgba(0,0,0,0.8);
-		  position: absolute;
-		  z-index: 100;
-		  -webkit-transition: all 300ms ease-out;
-		  -moz-transition: all 300ms ease-out;
-		  -o-transition: all 300ms ease-out;
-		  -ms-transition: all 300ms ease-out;
-		  transition: all 300ms ease-out;
-		  width: 100%;
-		  overflow: hidden;*/
-		  
-		  /* custom styles */
-		  /*background-color: rgba(255,255,255,0.8) !important;
-		  color: #333 !important;
-		  width: calc(100% - 10px)!important;
-		  margin: auto;
-		  align: center;*/
-	  /*}*/
-	  
-	  /* Makes the text color #33 */
-	  /*.foogallery-caption-title,
-	  .foogallery-caption-desc {
-		  color: #333 !important;
-	  }*/
-	  
-	  /* custom styles */
-	  /*.foogallery-default.hover-effect-caption.hover-caption-simple .foogallery-caption {
-		  bottom: 5px !important;
-		  left: 5px !important;
-	  }*/
-	  /* END BLACK TEXT ON WHITE CAPTION */
-	  /* END FOOGALLERY STYLES */
+ 	/* START FOOGALLERY STYLES */
+	/* Show caption to avoid Mystery Meat Navigation (no mouse hovering on phones!) */
+	/* Accomodates iPad portrait view and all phones including iPhone 6 Plus @736px width */
+	/* .foogallery-link-custom is for gateway pages (as opposed to gallery pages) */
+    .foogallery-link-custom.foogallery-default.hover-effect-caption.hover-caption-simple .foogallery-caption {
+		-moz-transform: translateY(0%) !important;
+		-o-transform: translateY(0%) !important;
+		-webkit-transform: translateY(0%) !important;
+		transform: translateY(0%) !important;
+	}
+	/* END FOOGALLERY STYLES */
 }
 
 @media screen and (max-width: 725px) {
 	/* START GLOBAL STYLES @725px */
 	#wrapper {
-		/*margin-right: 10px;*/
 		width: 97.5%;
 		margin: auto;
 	}
 	
-	/*div.content.page {
-		padding-right: 15px;	
-	}*/
+	nav#nav-main {
+		padding-left: 0;
+	}
 	
 	nav#nav-main ul {
 		margin-top: 0;
@@ -1651,180 +1274,72 @@ a#close_overlays {
 		padding-right: 10px;	
 	}
 	
+	.middle {
+		max-width: 700px;
+		width: 100%;
+	}
+	
 	.content {
 	  width: 100%;
 	  float: none;
 	  clear: both;	
-	 /* padding-right: 10px;*/
 	  padding: 0;
-	}
-	
-	.middle {
-		max-width: 700px;
-		width: 100%;
-		/*margin-right: 20px;
-		padding-right: 20px;*/
 	}
 	
 	.sidebar {
 	  width: 100%;
 	  float: none;
 	  clear: both;
-	  /*padding: 0 10px;*/
 	}
 	
-	footer {
-		/*padding-left: 10px;
-		padding-right: 10px;*/	
-	}
-	
-	/* search form input */
+	/* Search form input */
 	input#s {
 		height: 34px;	
 	}
 	/* END GLOBAL STYLES @725px */
 	
 	/* START HOME PAGE STYLES @725px  */
-	.flexslider {
+	/* FRONT PAGE FLEXSLIDER STYLES @725px */
+	/* The <div> containing the images. */
+	.flexslider { 
 		max-width: 500px;
 		width: 100% !important;
 		height: auto;
-		/*margin-right: 20px !important;
-		padding-right: 50px !important;*/
-		/*padding-right: 120px;*/
-	}
-	
-	ul.slides li.flex-active-slide img.attachment-full.size-full {
-		/*max-width: 500px;*/
-		/* width: 100% !important;	
-		height: auto;*/
-		/*padding-right: 50px !important;*/
-	}
-	
-	/*.flexslider ul.slides {
-		width: 300px;
-	}*/
-	
-	img.attachment-full.size-full {
-		/*box-sizing:border-box;	*/
-		/*max-width: 460px;
-		width: 100% !important;	
-		height: auto;
-		width: 100% !important;*/
-		/*margin-right: 20px !important;	
-		padding-right: 50px !important;*/
-	}
-	
-	/* flexslider */
-	.home img.attachment-large.size-large {
-		box-sizing:border-box;	
-		/*max-width: 460px;*/
-		width: 100% !important;
-		/*margin-right: 20px !important;	
-		padding-right: 50px !important;*/
-	}
-
-	/*.flexslider .slides img {width: 100%; display: block; border: none !important;}*/
-	
-	/* FRONT PAGE FLEXSLIDER STYLES */
-	.flexslider { /* the containing div that the images are in */
-		/*border: none !important;
-		background: pink !important;
-		width: 500px;
-		margin-bottom: 10px !important;*/	
 	}
 	
 	.flexslider .slides img {
-		/*width: 480px !important;
-		display: block;*/
 		height: auto !important;
-		/* border: 10px solid #333;*/
-		/*padding-right: 50px !important; */
 	}
 	
 	ul.slides {
 		width: 100% !important;
 		margin-right: 20px !important;
 	}
-
-	/* Removes post field paragraph tags that could be used in add_flexslider in functions.php */
-	/*.flexslider p {
-		display: none;	
-	}*/
 	
-	/*.flex-direction-nav a {
-		border-bottom: none !important;
-	}*/
-	
-	.flex-direction-nav a:before  { 
-	   /*font-size: 2.125em !important;*/ /* 34 /16 */
-	}
-	
-	/* controls the positioning of the indicator dots */
-	/*.flex-control-nav {
-		bottom: 15px !important;
-		z-index: 2 !important;	
-	}*/
-	
-	/* controls the color of the inactive indicator dots */
-	/*.flex-control-paging li a {
-		background: #FFF !important;
-		opacity: 0.5 !important;	
-	}*/
-	
-	/* controls the color of the active indicator dot */
-	/*.flex-control-paging li a.flex-active {
-		background: #333 !important;
-		opacity: 0.75 !important;	
-	}*/
-	
-	div.flexslider {
-		/*width: 450px;*/
+	/* flexslider */
+	.home img.attachment-large.size-large {
+		box-sizing:border-box;	
+		width: 100% !important;
 	}
 	/* END FRONT PAGE FLEXSLIDER STYLES @725px */
 	
-	/* START "BASIC" FOOTER STYLES - NO NAV (front-page.php) */
-	footer.footer-basic {
+	/* START 'BASIC' FOOTER STYLES - NO NAV (on front-page.php) */
+	/* Keeps the front-page footer div under the image. */
+	.home footer.footer-basic {
 		max-width: 500px;
 		width: 100%;
 		float: none;
 		padding: 0;
 		font-size: .75em; /* 12px /16px */
+		float: left;
 		text-align: right;
 	}
-	
-	.home footer.footer-basic {
-		float: left;	
-	}
-	/* END "BASIC" FOOTER STYLES - NO NAV (front-page.php) */
+	/* END 'BASIC' FOOTER STYLES - NO NAV (on front-page.php) */
 	/* END HOME PAGE STYLES @725px */
-		
-	/* START ABOUT PAGE STYES @725px */
-	.about-content {
-		/*padding-left: 10px;*/
-		/*padding-right: 10px;*/ /* money */
-		/*display: block;
-		float: none;*/
-	}
-	/* END ABOUT PAGE STYLES @725px */
 	
 	/* START PAGE-TEMPLATE-DEFAULT STYLES @725px */
-	.page-template-default .middle {
-		/*padding-left: 10px;
-		padding-right: 10px;*/
-		/*margin-left: 10px;*/
-		/*margin-right: 10px;	*/
-	}
-	
 	.page-template-default .middle.home-page {
 		padding-left: 0;
-	}
-	
-	.page-template-default .content {
-		/*padding-left: 10px;
-		padding-right: 10px;*/
-		/*margin-left: 10px;
-		margin-right: 10px;	*/
 	}
 	
 	.page-template-default .sidebar {
@@ -1834,62 +1349,19 @@ a#close_overlays {
 	/* END PAGE-TEMPLATE-DEFAULT STYLES @725px */
 	
 	/* START BLOG / EVENTS STYLES @725px */
-	
-	.blog .content {
-		/*padding-left: 10px;*/
-		/*padding-right: calc(100% * (10/700));	
-		margin-right: calc(100% * (10/700));*/	
-	}
-	
-	.blog .content {
-		/*margin-left: 10px;*/
-		/*margin-right: 10px;	*/
-	}
-	
 	article.blog-excerpt {
 		padding-right: 5px;	
-	}
-	
-	.blog .sidebar {
-		/*padding-left: 10px;*/	
 	}
 	/* END BLOG / EVENTS STYLES @725px */
 	
 	/* START PORTFOLIO @725px */
-	.foogallery-default.spacing-width-20 a:nth-child(3n+0) {
-		margin-right: 20px;	
-		/*padding-right: 20px;*/	
-	}
-	
-	/*.gateway-row-one a img:nth-child(3n+0),
-	.gateway-row-two a img:nth-child(3n+0),
-	.gateway-row-three a img:nth-child(3n+0) {
-		margin-right: 20px;	
-	}*/
-	
+	/* START WP GALLERY */
 	.gallery figure:nth-child(3n+0) {
 		margin-right: 20px;
 	}
+	/* END WP GALLERY */
 	
-	.page-template-page-portfolio p, 
-	.page-template-page-portfolio-back-more p, 
-	.page-template-page-portfolio-back p, 
-	.page-template-page-portfolio-more p {
-		/*width: 110px;
-		max-width: 20%;*/
-		/*float: right;*/
-		/*clear: none;*/	
-		display: inline;
-		font-size: .75em;
-	}
-	
-	.title-width {
-		/*max-width: 460px;
-		width: 50%;*/
-		/*display: inline-block;*/
-		/*float: left;*/
-	}
-	
+	/* START FOOGALLERY */
 	.foogallery-container {
 		clear: both;
 		width: 480px;
@@ -1897,7 +1369,10 @@ a#close_overlays {
 		/*padding-left: 20px;*/
 	}
 	
-	/*page page-id-305 page-child parent-pageid-41 page-template page-template-page-portfolio-back-more page-template-page-portfolio-back-more-php*/
+	.foogallery-default.spacing-width-20 a:nth-child(3n+0) {
+		margin-right: 20px;		
+	}
+	/* END FOOGALLERY */
 	
 	.page-template-page-portfolio .middle,
 	.page-template-page-portfolio-back .middle,
@@ -1906,36 +1381,24 @@ a#close_overlays {
 		clear: both;
 		width: 480px;
 		margin: auto;
-		/*padding-left: 40px;*/
 		padding-left: 20px;
 	}
 	
-	/* appears over right thumbnail */
-	/*div#nav-back-more {
-		clear: both;
-		float: left;
-		margin-left: 240px;	
-	}*/
+	.page-template-page-portfolio p, 
+	.page-template-page-portfolio-back-more p, 
+	.page-template-page-portfolio-back p, 
+	.page-template-page-portfolio-more p {
+		display: inline;
+		font-size: .75em;
+	}
 	
-	/* appears centered above both thumbnail columns */
+	/* Appears centered above both thumbnail columns. */
 	div#nav-back-more {
 		width: 460px;
-		/*margin: auto;*/
 		clear: both;
 		float: none;
 		display: block;
 	}
-	
-	/*div.foogallery-container > h4 {
-		max-width: 460px;
-		margin-top: 115px;
-		margin: auto;	
-	}*/
-	
-	/*.middle > div:nth-child(3) > p:nth-child(4) {
-		width: 460px;	
-	}*/
-	
 	/* END PORTFOLIO @725px */
 }
 
@@ -1956,18 +1419,12 @@ a#close_overlays {
 	
 	.page-template-page-portfolio h4 {
 		clear: both;
-		/*display: block;	*/
 	}
-	
-	/*div.home-page  {
-		padding-left: 0;
-	}*/
 	
 	#logo { 
 		width: 300px; 
 		height: auto;
 	}
-	
 }
 
 @media screen and (max-width: 525px) {
@@ -1981,9 +1438,6 @@ a#close_overlays {
 	}
 	/* END GLOBAL STYLES */
 	
-	/* START ABOUT PAGES */
-	/* END ABOUT PAGES */
-	
 	/* START PORTFOLIO <= 500px */
 	.page-template-page-portfolio .middle,
 	.page-template-page-portfolio-back .middle,
@@ -1994,8 +1448,6 @@ a#close_overlays {
 		margin: auto;
 	}
 	
-	/* foogallery-default foogallery-link-custom foogallery-lightbox-foobox-free spacing-width-20 
-	   hover-effect-zoom hover-effect-caption  alignment-left hover-caption-simple*/
 	.foogallery-container {
 		clear: both;
 		width: 240px;
@@ -2005,24 +1457,7 @@ a#close_overlays {
 	
 	div#nav-back-more {
 	  width: 220px;
-	  /*display: inline-block;*/
-	  /*float: none;*/
-	 /* padding-top: 15px;
-	  height: 27px;
-	  margin: auto;*/
-	  /*margin-left:20px;*/
 	}
-	
-	/*.back,
-	.more {
-		float: none;	
-	}*/	
-	
-	.foogallery-default.spacing-width-20 a, 
-	.foogallery-default.spacing-width-20.foogallery-link-none img {
-		/*margin-right: 0;*/	
-	}
-	
 	/* END PORTFOLIO <= 500px */
 	
 	/* START FOOTER */
@@ -2058,31 +1493,6 @@ a#close_overlays {
 	/* END CONTACT FORM 7 STYLES */
 }
 
-@media screen and (max-width: 495px) {
-	/*div#nav-back-more {
-		margin-left: 0;
-	}*/
-	
-	/*#wrapper {
-		margin-right: 10px;	
-	}*/
-	
-	/*#hoverNav {
-		width: 49.5% !important;	 
-	}*/
-	
-	/* START CONTACT FORM 7 STYLES */
-	/*.wpcf7 textarea {
-	  max-width: 320px;
-	}
-	
-	.wpcf7 input[type="text"],
-	input[type="email"] {
-	  max-width: 320px;
-	}*/
-	/* END CONTACT FORM 7 STYLES */
-}
-
 @media screen and (max-width: 400px) {
 	header {
 		height: auto;
@@ -2100,7 +1510,7 @@ a#close_overlays {
 	}
 	
 	h1 {
-		font-size: 1.75em;	
+		font-size: 1.75em; /* 28 / 16px = 175% */		
 	}
 	
 	#nav-back-more {
