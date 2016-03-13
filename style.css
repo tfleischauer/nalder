@@ -6,7 +6,7 @@ Theme Name: Nalder
 Author: Troy Fleischauer
 Author URI: http://www.portfolio.troyfleischauer.com
 Description: Custom theme for nannalder.com
-Version: 160311
+Version: 160312
 */
 
 /* DEVO ONLY -- delete when no longer needed */
@@ -103,7 +103,7 @@ div#nav-back-more {
 }
 
 .flexslider {
-	background-color: darkslateblue;	
+	background-color: darkslateblue !important;	
 }*/
 
 /* END DEVO ONLY */
@@ -408,9 +408,9 @@ div.home-page  {
 }
 	
 /* FRONT PAGE FLEXSLIDER STYLES */
-.flexslider { /* the containing div that the images are in */
+/* The <div> containing the images. */
+.flexslider {
 	border: none !important;
-	background: pink !important;
 	width: 500px;
 	margin-bottom: 10px !important;	
 }
@@ -553,6 +553,59 @@ figure {
 }
 /* END GLOBAL GALLERY STYLES */
 
+/* START FOOGALLERY STYLES */
+.foogallery-container {
+	clear: both;	
+}
+
+.foogallery-default.border-style-square-black a, 
+.foogallery-default.border-style-square-black.foogallery-link-none img {
+	border: none !important;
+}
+
+.foogallery-container a:link, 
+.foogallery-container a:visited {
+  color: #333;
+  text-decoration: none;
+  border-bottom-width: 0; 
+  border-bottom-style: none; 
+  /*border-bottom-color: none;*/
+}
+
+.foogallery-default.spacing-width-20 a:nth-child(3n+0) {
+	margin-right: 0;
+	padding-right: 0;	
+}
+ 
+.tp-title {
+   padding: 10px 35px 0px 0px !important;
+   width: 100%;
+   top: auto;
+}
+
+.tp-info, 
+.tp-title {
+   top: auto;
+   width: 100%;
+   text-align: left !important;
+   bottom: 0;
+}
+/* END FOOGALLERY STYLES */
+
+/* START FOOBOX STYLES */
+/* Removes rounded corners */
+.fbx-rounded .fbx-inner {
+   border: 8px solid transparent;
+   border-radius: 0 !important; 
+} 
+
+/* X to close Foobox caption */
+a.fbx-close-overlays,
+a#close_overlays {
+	border-bottom: none;
+}
+/* END FOOBOX STYLES */
+
 /* START WORDPRESS GALLERY STYLES */
 /* PORTFOLIO GATEWAY PAGE STYLES - WP GALLERY STYLES */
 p.wp-caption-text {
@@ -646,16 +699,74 @@ ul.post-navigation {
 /* END INDEX.PHP STYLES (BLOG PAGE) */
 
 /* START SINGLE.PHP */
-/* comments on single.php */
+/* START COMMENTS */
 div#respond {
 	clear: both;	
 }
 
 /* Name, Mail, Website */
 #respond input {
-	height: 32px;	
+	width: 450px;
+    height: 34px;
 	margin-bottom: 5px;
 }
+
+/* START COMMENTS SECTION */
+/* Start Sinkula's jetcityimprov.org comment form */
+#commments {
+	padding: 20px 0;
+}
+
+.comment-item {
+	padding: 20px;
+	overflow: hidden;
+}
+	
+.comment-item img.avatar {
+	float: left;
+	margin: 0px 20px 0px 0px;
+}
+	
+.comment-item p.comment-author {	
+	font-size: 120%;
+	font-weight: bold;
+	margin-bottom: 4px;
+}
+			
+.comment-item p.comment-date {
+	font-size: .75em;
+	margin-bottom: 4px;
+}
+	
+.comment-item p.comment-reply  {
+
+}
+	
+label {
+	display: block;
+	margin-bottom: 1px;
+}
+
+#comment-form input {
+	width: 450px;
+	height: 34px;	
+	margin-bottom: 10px;
+	font-size: .95em;
+}
+
+textarea#comment {
+	width: 450px;
+	font-size: .95em;
+	margin-bottom: 10px;
+}
+
+#comment-form input.submit {
+	width: 150px;
+	display: block;
+}
+/* End Sinkula's jetcityimprov.org comment form */
+/* END COMMENTS SECTION */
+/* END COMMENTS */
 /* END SINGLE.PHP */
 
 /* START SIDEBAR NAVIGATION USING CUSTOM FIELDS */
@@ -668,7 +779,7 @@ li.page_item.current_page_item a,
 /* END SIDEBAR NAVIGATION USING CUSTOM FIELDS */
 
 /* START FOOTER STYLES */
-/* START 'BASIC' FOOTER STYLES - NO NAVIGATION (front-page.php) */
+/* START 'BASIC' FOOTER STYLES - NO NAVIGATION (as on front-page.php) */
 footer.footer-basic {
 	width: 500px;
 	float: none;
@@ -678,9 +789,9 @@ footer.footer-basic {
 }
 
 footer p.footer-basic {
-		display: none;	
+	display: none;	
 }
-/* END 'BASIC' FOOTER STYLES - NO NAVIGATION (front-page.php) */
+/* END 'BASIC' FOOTER STYLES - NO NAVIGATION (as on front-page.php) */
 
 footer {
 	clear: both;
@@ -944,13 +1055,8 @@ a img.aligncenter {
 	margin-bottom: 20px;	
 }
 
+/* Sinkula will switch to box-sizing: border-box only for images */
 .content.img {
-	/* Sinkula will switch to box model for images, the borders and padding will be inside the image's width. */
-	/* Good for responsive design to keep the borders and padding the same as the stated width. */
-	/* Helps with problems for the width of the image. */
-	/* Good to have the same padding and border on the image without 
-	   having to calculate percentages when using responsive sizes. */
-	/* Ex: Could just call it 100px w/o having to subtract the amount of padding and border from the content. */
 	box-sizing: border-box; 
 }
 
@@ -967,7 +1073,8 @@ a img.aligncenter {
 	border: 3px solid #333;
 }
 
-/* Floats thumbnail image to the left and puts proper margins on thumbnail image. */
+/* Floats thumbnail image to the left and 
+   puts proper margins on thumbnail image. */
 .content img.attachment-thumbnail {
 	float: left;
 	margin: 4px 20px 0 0;	
@@ -1010,150 +1117,8 @@ a img.aligncenter {
 }
 /* END WORDPRESS GENERATED CLASSES (with a few custom alterations and additions) */
 
-/* START FOO GALLERY STYLES */
-.foogallery-container {
-	clear: both;	
-}
 
-.foogallery-default.border-style-square-black a, 
-.foogallery-default.border-style-square-black.foogallery-link-none img {
-	border: none !important;
-}
-
-.foogallery-container a:link, 
-.foogallery-container a:visited {
-  color: #333;
-  text-decoration: none;
-  border-bottom-width: 0; 
-  border-bottom-style: none; 
-  /*border-bottom-color: none;*/
-}
-
-.foogallery-default.spacing-width-20 a:nth-child(3n+0) {
-	margin-right: 0;
-	padding-right: 0;	
-}
- 
-/* .foogallery-default.spacing-width-20.foogallery-link-none img */
-.foogallery-gallery-289 a:hover img, 
-.foogallery-gallery-289 a:focus img {
-	/*border: 5px solid rgba(51,51,51,.80);*/
-	/*border: 5px solid #000000 !important;*/
-}
-
-.foogallery-gallery-289 a:link {
-	/*border-bottom: none;*/	
-}
-
-a.fbx-next.fbx-btn-transition.fbx-btn-shadow {
-  /*background-color: rgba(0, 0, 0, 0.8) !important;*/ 
-}
-
-.fbx-light .fbx-inner {
-  /*background-color: rgba(0, 0, 0, 0.8) !important;*/
-}
-
-/*.foogallery-default,*/
-.foogallery-caption {
-	/*display: none;*/
-   /*background-color: rgba(255,255,255,0.8) !important; 
-   color: #000 !important;*/
- /* position: absolute;
-  z-index: 100;
-  -webkit-transition: all 300ms ease-out;
-  -moz-transition: all 300ms ease-out;
-  -o-transition: all 300ms ease-out;
-  -ms-transition: all 300ms ease-out;
-  transition: all 300ms ease-out;
-  width: 100%;
-  overflow: hidden;*/
-}
-
-.tp-title {
-   padding: 10px 35px 0px 0px !important;
-   width: 100%;
-   top: auto;
-}
-
-.tp-info, 
-.tp-title {
-   top: auto;
-   width: 100%;
-   text-align: left !important;
-   bottom: 0;
-}
-
-/* START FOOBOX STYLES */
-.fbx-rounded .fbx-inner {
-   border: 8px solid transparent;
-   border-radius: 0 !important; 
-}
-
-a.fbx-close-overlays,
-a#close_overlays {
-	border-bottom: none;
-}
-
-.fbx-light .fbx-inner, 
-.fbx-light .fbx-loader, 
-.fbx-light .fbx-close, 
-.fbx-light .fbx-prev, 
-.fbx-light .fbx-next, 
-.fbx-light .fbx-play, 
-.fbx-light .fbx-pause, 
-.fbx-light .fbx-fullscreen-toggle, 
-.fbx-light .fbx-social-toggle, 
-.fbx-rounded.fbx-light.fbx-inset-buttons .fbx-prev:before, 
-.fbx-rounded.fbx-light.fbx-inset-buttons .fbx-next:before {
- 	background-color: #F5F5DC;
-}
-
-/* Controls the black semi-transparent
-    background for modern browsers */
-.fbx-modal {
-	background: rgba(0,0,0,.7) none !important;
-}
-
-/* Controls the glow around the image.
-   This is the default style */
-.fbx-inner {
-    -moz-box-shadow:0 0 12px #000;
-    -moz-box-shadow:0 0 12px rgba(0,0,0,.8);
-    -webkit-box-shadow:0 0 12px #000;
-    -webkit-box-shadow:0 0 12px rgba(0,0,0,.8);
-    box-shadow:0 0 12px #000;
-    box-shadow:0 0 12px rgba(0,0,0,.8)
-}
-
-/* Change the appearance for navigation on larger screens */
- .fbx-prev {}
- .fbx-next {}
- .fbx-close {}
- .fbx-fullscreen-toggle {}
- 
-/* Controls the look of the FooBox Captions */
- .fbx-caption {}
- .fbx-caption-title {}
- .fbx-caption-desc {}
- .fbx-title {}
-
-/* Control the look of the FooBox affiliate link */
- .fbx-credit {}
-
-/* Controls the image count */
-.fbx-count {}
-
-.fbx-phone.fbx-modal {}
-
-.fbx-phone.fbx-caption {}
-
-.fbx-tablet.fbx-modal {}
-
-.fbx-tablet.fbx-caption {}
-/* END FOOBOX STYLES */
-/* END FOO GALLERY STYLES */
-
-/* Desktop & Mobile Screens Set to 860px and Below */
+/* DESKTOP & MOBILE SCREENS 860px AND SMALLER */
 @media screen and (max-width: 860px) {
   	body {
 		padding: 0;
@@ -1323,7 +1288,7 @@ a#close_overlays {
 	}
 	/* END FRONT PAGE FLEXSLIDER STYLES @725px */
 	
-	/* START 'BASIC' FOOTER STYLES - NO NAV (on front-page.php) */
+	/* START 'BASIC' FOOTER STYLES - NO NAVIGATION (as on front-page.php) */
 	/* Keeps the front-page footer div under the image. */
 	.home footer.footer-basic {
 		max-width: 500px;
@@ -1334,7 +1299,7 @@ a#close_overlays {
 		float: left;
 		text-align: right;
 	}
-	/* END 'BASIC' FOOTER STYLES - NO NAV (on front-page.php) */
+	/* END 'BASIC' FOOTER STYLES - NO NAVIGATION (as on front-page.php) */
 	/* END HOME PAGE STYLES @725px */
 	
 	/* START PAGE-TEMPLATE-DEFAULT STYLES @725px */
@@ -1460,6 +1425,29 @@ a#close_overlays {
 	}
 	/* END PORTFOLIO <= 500px */
 	
+	/* START SINGLE.PHP */
+	/* START COMMENTS */
+	/* Name, Mail, Website */
+	#respond input {
+		max-width: calc(100% * (640/700));
+	}
+	
+	textarea#comment {
+		max-width: calc(100% * (640/700));
+	}
+	
+	/* Start Sinkula's jetcityimprov.org comment form */
+	#comment-form input {
+		max-width: calc(100% * (640/700));	
+	}
+	
+	#comment-form text-area {
+		max-width: calc(100% * (640/700));
+	}
+	/* End Sinkula's jetcityimprov.org comment form */
+	/* END COMMENTS */
+	/* END SINGLE.PHP */
+	
 	/* START FOOTER */
 	nav#nav-footer,
 	nav.nav-footer-utility {
@@ -1472,9 +1460,9 @@ a#close_overlays {
 	}
 	
 	.page-template-page-portfolio footer,
-	.page-template-page-portfolio-back .footer,
+	.page-template-page-portfolio-back footer,
 	.page-template-page-portfolio-more footer,
-	.page-template-page-portfolio-back-more .footer {
+	.page-template-page-portfolio-back-more footer {
 		width: 220px;
 		text-align: right;
 		padding-top: 0;
