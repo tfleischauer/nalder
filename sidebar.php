@@ -3,7 +3,8 @@
 
   <!-- Begin Sub-Navigation -->
   <div id="sub-navigation" class="widget">
-	<?php if (is_page()) : // if we are in 'pages'... ?>
+    <?php wp_reset_query(); // ?needed for Events templates? ?>
+	<?php if (is_page()): // if we are in 'pages'... ?>
       <h2 class="sub-navigation-title">
           <?php echo get_the_title($post->post_parent); // ... get the gateway page title ?>
       </h2>

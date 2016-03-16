@@ -6,7 +6,7 @@ Theme Name: Nalder
 Author: Troy Fleischauer
 Author URI: http://www.portfolio.troyfleischauer.com
 Description: Custom theme for nannalder.com
-Version: 160312
+Version: 160315
 */
 
 /* DEVO ONLY -- delete when no longer needed */
@@ -608,10 +608,10 @@ a#close_overlays {
 
 /* START WORDPRESS GALLERY STYLES */
 /* PORTFOLIO GATEWAY PAGE STYLES - WP GALLERY STYLES */
-p.wp-caption-text {
-	text-align: center;
+.gallery div.wp-caption p.wp-caption-text {
+	/*text-align: center;
 	background-color: rgba(255,255,255,.70);
-	font-size: 1.25em;
+	font-size: 1.25em;*/
 }
 
 .gallery div.wp-caption p.wp-caption-text,
@@ -669,6 +669,38 @@ a#playPause {
 /* END WORDPRESS GALLERY STYLES */
 /* END PORTFOLIO & GALLERY STYLES */
 
+/* START EVENTS PAGE */
+a.image-in-feed {
+	border-bottom: none;
+}
+
+.content.page-events .image-in-feed img.wp-post-image {
+	border: 3px solid #000;
+	height: auto;
+} 
+
+.content.page-events p.wp-caption-text {
+    font-size: .6875em; /* 11 / 16 */
+    line-height: 1.0625; /* 17 / 16 */
+    margin: 0;
+	text-align: center;
+	border: none;
+	outline: 1px solid ivory;
+	padding-top: 10px;
+}
+
+.content.page-events .wp-caption {
+	max-width: 100%;	
+}
+
+/* For nav-main 'You Are Here' state. 'Events' is active when  
+   'Installalations' and 'Speaking' are removed from the nav-main */
+/*#nav-main ul li.current-page-ancestor a	{
+	color: #333;
+  	text-decoration: underline;	
+}*/
+/* END EVENTS PAGE */
+
 /* START INDEX.PHP STYLES (BLOG PAGE) */
 .content article.blog-excerpt {
 	overflow: hidden;
@@ -699,6 +731,14 @@ ul.post-navigation {
 /* END INDEX.PHP STYLES (BLOG PAGE) */
 
 /* START SINGLE.PHP */
+.single .wp-caption {
+	max-width: 100%;	
+}
+
+.single .wp-caption p.wp-caption-text {
+	padding-top: 10px;
+}
+
 /* START COMMENTS */
 div#respond {
 	clear: both;	
@@ -718,7 +758,7 @@ div#respond {
 }
 
 .comment-item {
-	padding: 20px;
+	padding: 20px 5px;
 	overflow: hidden;
 }
 	
@@ -970,7 +1010,8 @@ input#s {
 .aligncenter,
 div.aligncenter {
     display: block;
-    margin: 5px auto 5px auto;
+    /*margin: 5px auto 5px auto;*/
+	margin: 0 auto 15px auto;
 }
 
 .alignright {
@@ -1007,7 +1048,8 @@ a img.aligncenter {
     background: #fff;
     border: 1px solid #f0f0f0;
     max-width: 96%; /* image does not overflow the content area */
-    padding: 5px 3px 10px; 
+    /*padding: 5px 3px 10px; */
+	padding: 5px 3px 10px;
     text-align: center; /* also aligns the image to the center of div.wp.caption */
 }
 
