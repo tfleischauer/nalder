@@ -103,10 +103,27 @@ function add_flexslider() {
 		
 		echo '</ul>';
 		echo '</div>';
-	} // END see if there are images attached to the posting
+	} // End see if there are images attached to the posting
 	
 }
 // End Add Flexslider by Mike Sinkula
+
+// Show Gravatar in Comments	
+function show_avatar($comment, $size) {				
+	 $email=strtolower(trim($comment->comment_author_email));
+	 $rating = "G"; // [G | PG | R | X]
+	 
+	if (function_exists('get_avatar')) {
+      echo get_avatar($email, $size);
+   	} 
+   	else {
+      
+      $grav_url = "http://www.gravatar.com/avatar.php?gravatar_id=
+         " . md5($emaill) . "&size=" . $size."&rating=".$rating;
+      echo "<img src='$grav_url'/>";
+   	}		
+}
+// End Show Gravatar in Comments
 
 // Note:  WP Admin will not allow log-in if there is any more than one blank line at the end of functions.php.
 

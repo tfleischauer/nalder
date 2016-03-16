@@ -25,8 +25,9 @@
        <p class="alignright"><?php previous_posts_link('Newer Posts &raquo;') ?></p>
       </nav>
     </article>
+    
     <?php comments_template(''); ?>
- 
+  
   <?php endwhile; else : ?>
 	<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
   <?php endif; // end the loop ?>
