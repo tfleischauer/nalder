@@ -6,7 +6,7 @@ Theme Name: Nalder
 Author: Troy Fleischauer
 Author URI: http://www.portfolio.troyfleischauer.com
 Description: Custom theme for nannalder.com
-Version: 160315
+Version: 180312
 */
 
 /* DEVO ONLY -- delete when no longer needed */
@@ -413,6 +413,7 @@ div.home-page  {
 	border: none !important;
 	width: 500px;
 	margin-bottom: 10px !important;	
+	background-color: #000 !important;
 }
 
 .flexslider .slides img {
