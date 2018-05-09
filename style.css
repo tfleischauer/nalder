@@ -6,15 +6,15 @@ Theme Name: Nalder
 Author: Troy Fleischauer
 Author URI: http://www.portfolio.troyfleischauer.com
 Description: Custom theme for nannalder.com
-Version: 180312
+Version: 180323
 */
 
 /* DEVO ONLY -- delete when no longer needed */
 /*div, header, nav, aside, footer, img {
 	outline: 1px solid red;	
-}*/
+}
 
-/*#wrapper {
+#wrapper {
 	background-color: cyan;		
 }
 
@@ -36,11 +36,11 @@ li {
 
 #nav-main ul {
 	background-color: darkseagreen;
-}*/
+}
 
-/* bg color uncommented illustrates what is going 
-   on structurally in this list very well */
-/*#nav-main li a {
+ bg color uncommented illustrates what is going 
+   on structurally in this list very well 
+#nav-main li a {
 	background-color: deeppink;  
 }
 
@@ -1280,6 +1280,10 @@ a img.aligncenter {
 	#nav-main li a {
 		padding-left: 10px;
 		padding-right: 10px;	
+	}
+	
+	#toggle {
+		margin-right: 10px;	
 	}
 	
 	.middle {
