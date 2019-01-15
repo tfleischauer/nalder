@@ -25,6 +25,7 @@
        </ul>
      <?php endif; // end if we are in 'pages' ?>
      
+     <!-- Places 'Blog' as the sidebar title with categories listed underneath on only the Blog page. -->
      <?php if (!(is_page())) : // if we are NOT in 'pages' ?>
          <h2 class="sub-navigation-title">Blog</h2>
          <ul class="sub-navigation-items">
